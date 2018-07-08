@@ -139,7 +139,7 @@ sample=1.0
 edits=append;replace;delete
 #edits=FUNREP;PARREP;PARADD;PARREM;EXPREP;EXPADD;EXPREM;NULLCHECK;OBJINIT;RANGECHECK;SIZECHECK;CASTCHECK
 
-# don't know whats this used for. Ask Mau.
+# optionally you can provide a probabilistic model to modify the distribution it uses to pick the mutation operators
 #model=probabilistic
 #modelPath=/home/mausoto/probGenProg/genprog4java/overallModel.txt
 
