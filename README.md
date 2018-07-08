@@ -1,6 +1,3 @@
-# GPD4J
-The purpose of this repo is to allow user to run GenProg in the Defects4J bugs
-
 # How to run defects4j bugs in genprog4java
 
 To run a single defects4j bug in genprog4java use the runGenProgForBug.sh script
