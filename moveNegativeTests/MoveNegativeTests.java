@@ -1,6 +1,7 @@
 import com.github.javaparser.*;
 import com.github.javaparser.ast.*;
 import com.github.javaparser.ast.body.*;
+//import com.github.javaparser.ast.body.type.*;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -16,6 +17,7 @@ import java.util.HashSet;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.FileNotFoundException;
+import java.util.EnumSet;
 
 
 //requires java 1.8
@@ -26,6 +28,7 @@ public class MoveNegativeTests
   static String pathToListOfNewClasses = null;
   static Collection<String> modifiedClasses = new LinkedList<>();
   static String pathToListOfModifiedClasses = null;
+  static int timeoutLength = 1000;
 
   public static void main(String[] args)
   {
@@ -170,6 +173,10 @@ public class MoveNegativeTests
     for (MethodDeclaration method : methodsToRemove)
       method.remove(); //method inherited from its parent Node->BodyDeclaration->CallableDeclaration
 
+    //add timeout checks to both original and new files
+    addTimeoutChecks(origCU, classDecOrig);
+    addTimeoutChecks(newCU, classDecNew);
+
     //write out the new file
     try
     {
@@ -194,6 +201,25 @@ public class MoveNegativeTests
     } catch (IOException e) {
       e.printStackTrace();
     }
+  }
+
+  private static void addTimeoutChecks(CompilationUnit cu, ClassOrInterfaceDeclaration classDec)
+  {
+    //repeated imports is OK, no need to check whether import is already existing
+    cu.addImport("org.junit.Rule");
+    cu.addImport("org.junit.Test");
+    cu.addImport("org.junit.rules.Timeout");
+    cu.addImport("java.util.concurrent.CountDownLatch");
+
+    VariableDeclarator latchVD = new VariableDeclarator(JavaParser.parseClassOrInterfaceType("CountDownLatch"), "latch")
+        .setInitializer("new CountDownLatch(1)");
+    FieldDeclaration latchFD = new FieldDeclaration(EnumSet.<Modifier>of(Modifier.PRIVATE, Modifier.FINAL), latchVD);
+    classDec.addMember(latchFD);
+
+    VariableDeclarator timeoutVD = new VariableDeclarator(JavaParser.parseClassOrInterfaceType("Timeout"), "globalTimeout")
+        .setInitializer("Timeout.seconds(" + timeoutLength + ")");
+    FieldDeclaration timeoutFD = new FieldDeclaration(EnumSet.<Modifier>of(Modifier.PUBLIC), timeoutVD);
+    classDec.addMember(timeoutFD);
   }
 
   private static String getShortClassName(String fullClassName)
