@@ -147,6 +147,7 @@ sourceDir = $WD
 positiveTests = $D4J_HOME/$BUGSFOLDER/$LOWERCASEPACKAGE$2Buggy/pos.tests
 negativeTests = $D4J_HOME/$BUGSFOLDER/$LOWERCASEPACKAGE$2Buggy/neg.tests
 positiveTestClassesDaikonSample = $D4J_HOME/$BUGSFOLDER/$LOWERCASEPACKAGE$2Buggy/$MODIFIEDCLASSESLIST
+pathToNoTimeoutTests = $DAIKONTESTS
 jacocoPath = $GP4J_HOME/lib/jacocoagent.jar
 testClassPath=$TESTCP
 srcClassPath=$COMPILECP
@@ -249,3 +250,8 @@ defects4j export -p classes.modified > $BUGWD/bugfiles.txt
 
 echo "This is the working directory: "
 echo $D4J_HOME/$BUGSFOLDER/$LOWERCASEPACKAGE$2Buggy/$WD
+
+#compile tests for Daikon
+cd $DAIKONTESTS
+find . -name "*.java" > sources.txt
+javac -classpath ".:$BUGWD/$WD:$TESTCP:$GP4J_HOME/target/classes" @sources.txt
