@@ -20,7 +20,7 @@
 # Example usage, VM:
 #./prepareBug.sh Math 2 allHuman 100 ExamplesCheckedOut /usr/lib/jvm/java-7-oracle/ /usr/lib/jvm/java-8-oracle/ true <path to neg.test> true <path to pos.test>
 
-if [ "$#" -ne 12 ]; then
+if [ "$#" -ne 14 ]; then
     echo "This script should be run with 12 parameters:"
 	echo "1st param: project name, sentence case (ex: Lang, Chart, Closure, Math, Time)"
 	echo "2nd param: bug number (ex: 1,2,3,4,...)"
@@ -34,6 +34,8 @@ if [ "$#" -ne 12 ]; then
 	echo "10th param is set to \"true\" if positive tests are to be specified using sampled tests else set this to \"false\""
 	echo "11th param is the path to file containing sampled positive tests"
 	echo "12th param is the path to the directory containing the class files of the tests relative to the path to the defects4j bug"
+  echo "13th param is the timeout length for unit tests (in milliseconds)"
+  echo "14th param is the name of the directory that will contain tests for Daikon to learn invariants on (will be created if required)"
     exit 0
 fi
 
@@ -49,6 +51,8 @@ NEGTESTPATH="$9"
 SAMPLEPOSTESTS="${10}"
 POSTESTPATH="${11}"
 TESTFOLDER="${12}"
+TIMEOUT="${13}"
+DAIKONTESTS="${14}"
 
 BASEDIR=$PWD
 
@@ -76,7 +80,7 @@ defects4j checkout -p $1 -v "$BUGNUMBER"b -w $BUGWD
 #Zhen's preprocessing step: separate positive and negative test cases
 PREVLOCATION=$(pwd)
 cd $BASEDIR/moveNegativeTests
-sh moveNegativeTests.sh $BUGWD $BUGWD/neg.tests $BUGWD/$MODIFIEDCLASSESLIST javaparser_javaparser-core_target_classes
+bash moveNegativeTests.sh $BUGWD $BUGWD/neg.tests $BUGWD/$MODIFIEDCLASSESLIST javaparser_javaparser-core_target_classes $TIMEOUT $DAIKONTESTS
 cd $PREVLOCATION
 
 #Compile the both buggy and fixed code

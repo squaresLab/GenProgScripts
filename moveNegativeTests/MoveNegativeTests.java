@@ -18,33 +18,40 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.FileNotFoundException;
 import java.util.EnumSet;
+import java.lang.Integer;
 
 
 //requires java 1.8
 public class MoveNegativeTests
 {
+  static String wkdirD4j = null;
   static String pathToSrcOfTests = null;
   static Collection<String> newClasses = new LinkedList<>();
   static String pathToListOfNewClasses = null;
   static Collection<String> modifiedClasses = new LinkedList<>();
   static String pathToListOfModifiedClasses = null;
-  static int timeoutLength = 1000;
+  static int timeoutLength = -1; //this is the placeholder value
+  static String pathToDaikonTests = null;
 
   public static void main(String[] args)
   {
-    if (args.length != 5)
+    if (args.length != 7)
     {
       System.err.println("0th param: path to the file containing the path to the source directory of tests");
       System.err.println("1st param: path to the list of failing test cases");
       System.err.println("2nd param: path to the working directory of the defects4j bug");
       System.err.println("3rd param: path to the file to write the list of new test classes to");
       System.err.println("4th param: path to the file to write the list of modified test classes to");
+      System.err.println("5th param: timeout length for unit tests (in milliseconds)");
+      System.err.println("6th param: path to the directory to place the modified test classes w/o timeouts to (this is for Daikon)");
       return;
     }
 
     pathToListOfNewClasses = args[3];
     pathToListOfModifiedClasses = args[4];
-    String wkdirD4j = args[2].endsWith(File.separator) ? args[2] : args[2] + File.separator; //add the separator to the end of the path
+    timeoutLength = Integer.parseInt(args[5]);
+    pathToDaikonTests = args[6].endsWith(File.separator) ? args[6] : args[6] + File.separator;
+    wkdirD4j = args[2].endsWith(File.separator) ? args[2] : args[2] + File.separator; //add the separator to the end of the path
     try
     {
       pathToSrcOfTests = wkdirD4j + Files.readAllLines(Paths.get(args[0]), Charset.defaultCharset()).get(0);
@@ -173,6 +180,25 @@ public class MoveNegativeTests
     for (MethodDeclaration method : methodsToRemove)
       method.remove(); //method inherited from its parent Node->BodyDeclaration->CallableDeclaration
 
+    //write out the modified class w/ positive tests to pathToDaikonTests before adding timeout checks
+    {
+      //make the dirs
+      String packageDirectories = packages.isPresent() ? packages.get().getName().asString().replace('.', File.separatorChar) : "";
+      String pathToDir = pathToDaikonTests + packageDirectories;
+      File dir = new File(pathToDir);
+      dir.mkdirs();
+
+      try
+      {
+        FileWriter fw = new FileWriter(pathToDaikonTests + clazzDotsReplaced + ".java", false);
+        String stuffToWrite = origCU.toString();
+        fw.write(stuffToWrite, 0, stuffToWrite.length());
+        fw.close();
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+    }
+
     //add timeout checks to both original and new files
     addTimeoutChecks(origCU, classDecOrig);
     addTimeoutChecks(newCU, classDecNew);
@@ -209,17 +235,24 @@ public class MoveNegativeTests
     cu.addImport("org.junit.Rule");
     cu.addImport("org.junit.Test");
     cu.addImport("org.junit.rules.Timeout");
-    cu.addImport("java.util.concurrent.CountDownLatch");
 
+    VariableDeclarator timeoutVD = new VariableDeclarator(JavaParser.parseClassOrInterfaceType("Timeout"), "globalTimeout")
+        .setInitializer("new Timeout(" + timeoutLength + ")");
+    FieldDeclaration timeoutFD = new FieldDeclaration(EnumSet.<Modifier>of(Modifier.PUBLIC), timeoutVD);
+    timeoutFD.addAnnotation("Rule");
+    classDec.addMember(timeoutFD);
+
+    /*
     VariableDeclarator latchVD = new VariableDeclarator(JavaParser.parseClassOrInterfaceType("CountDownLatch"), "latch")
         .setInitializer("new CountDownLatch(1)");
     FieldDeclaration latchFD = new FieldDeclaration(EnumSet.<Modifier>of(Modifier.PRIVATE, Modifier.FINAL), latchVD);
     classDec.addMember(latchFD);
 
     VariableDeclarator timeoutVD = new VariableDeclarator(JavaParser.parseClassOrInterfaceType("Timeout"), "globalTimeout")
-        .setInitializer("Timeout.seconds(" + timeoutLength + ")");
+        .setInitializer("Timeout.seconds((long)" + timeoutLength + ")");
     FieldDeclaration timeoutFD = new FieldDeclaration(EnumSet.<Modifier>of(Modifier.PUBLIC), timeoutVD);
     classDec.addMember(timeoutFD);
+    */
   }
 
   private static String getShortClassName(String fullClassName)

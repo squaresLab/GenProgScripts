@@ -32,7 +32,7 @@
 #Example of usage:
 #./runGenProgForBug.sh Math 2 allHuman 100 ExamplesCheckedOut 1 5 false /usr/lib/jvm/java-1.7.0-openjdk-amd64 /usr/lib/jvm/java-1.8.0-openjdk-amd64 false \"\" false \"\"
 
-if [ "$#" -ne 15 ]; then
+if [ "$#" -ne 16 ]; then
 	echo "This script should be run with 15 parameters:"
 	echo " 1st param is the project in upper case (ex: Lang, Chart, Closure, Math, Time)"
 	echo " 2nd param is the bug number (ex: 1,2,3,4,...)"
@@ -49,6 +49,7 @@ if [ "$#" -ne 15 ]; then
         echo " 13th param is set to \"true\" if positive tests are to be specified using sampled tests else set this to \"false\""
         echo " 14th param is the path to file containing sampled positive tests"
 	echo " 15th param is the path to the directory containing the class files of the tests relative to the path to the defects4j bug"
+	echo " 16th param is the timeout length for unit tests (in milliseconds)"
 else
 
 PROJECT="$1"
@@ -66,6 +67,7 @@ NEGTESTPATH="${12}"
 SAMPLEPOSTESTS="${13}"
 POSTESTPATH="${14}"
 TESTFOLDER="${15}"
+TIMEOUT="${16}"
 
 
 #if [ "$#" -eq 15 ]; then
@@ -108,7 +110,8 @@ if [ -d "$GP4J_HOME" ]; then
 
     cd $BASEDIR
 
-	./prepareBugExperimental.sh $PROJECT $BUGNUMBER $OPTION $TESTSUITESAMPLE $BUGSFOLDER $DIROFJAVA7 $DIROFJAVA8 $SAMPLENEGTESTS $NEGTESTPATH $SAMPLEPOSTESTS $POSTESTPATH ${15}
+	DAIKONTESTS = $BUGWD/"daikonTests"
+	./prepareBugExperimental.sh $PROJECT $BUGNUMBER $OPTION $TESTSUITESAMPLE $BUGSFOLDER $DIROFJAVA7 $DIROFJAVA8 $SAMPLENEGTESTS $NEGTESTPATH $SAMPLEPOSTESTS $POSTESTPATH $TESTFOLDER $TIMEOUT $DAIKONTESTS
 
     if [ -d "$BUGWD/$WD" ]; then
 	echo "Going to BUGWD"
