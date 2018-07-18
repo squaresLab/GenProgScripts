@@ -16,8 +16,8 @@ fi
   JAVAPARSER="$4"
   TIMEOUT="$5"
   DAIKONTESTS="$6"
-  PATHTOTESTS="$BASEDIR/moveNegativeTests_pathToTests"
-  NEGTESTSLIST="$BASEDIR/moveNegativeTests_negTestsList"
+  PATHTOTESTS="$D4JWKDIR/moveNegativeTests_pathToTests"
+  NEGTESTSLIST="$D4JWKDIR/moveNegativeTests_negTestsList"
 
   cd $D4JWKDIR
   defects4j export -p 'dir.src.tests' -o $PATHTOTESTS
