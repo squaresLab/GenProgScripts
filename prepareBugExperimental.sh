@@ -81,6 +81,17 @@ defects4j checkout -p $1 -v "$BUGNUMBER"b -w $BUGWD
 
 #Zhen's preprocessing step: separate positive and negative test cases
 PREVLOCATION=$(pwd)
+
+  #substep in Zhen's preprocessing step:
+  #copy all test source files to DAIKONTESTS. The script should remove negative tests from the classes w/ negative tests in them
+  #and place a "cleansed" test class w/o any timeouts to DAIKONTESTS. This is better than only putting the "cleansed" test
+  #classes in DAIKONTESTS, as these "cleansed" tests might require stuff present in other test classes (I found this out while running experiments).
+
+  cd $D4J_HOME/$BUGSFOLDER/$LOWERCASEPACKAGE$2Buggy/
+  TESTWD=`defects4j export -p dir.src.tests`
+  rsync -r $TESTWD/ $DAIKONTESTS
+  #echo "This is TESTWD: "
+
 cd $BASEDIR/moveNegativeTests
 bash moveNegativeTests.sh $BUGWD $BUGWD/neg.tests $BUGWD/$MODIFIEDCLASSESLIST javaparser_javaparser-core_target_classes $TIMEOUT $DAIKONTESTS
 cd $PREVLOCATION
@@ -255,6 +266,7 @@ echo "This is the working directory: "
 echo $D4J_HOME/$BUGSFOLDER/$LOWERCASEPACKAGE$2Buggy/$WD
 
 #compile tests for Daikon
+echo "compiling positive tests w/o timeouts for Daikon"
 cd $DAIKONTESTS
 find . -name "*.java" > sources.txt
 javac -classpath ".:$BUGWD/$WD:$TESTCP:$GP4J_HOME/target/classes" @sources.txt

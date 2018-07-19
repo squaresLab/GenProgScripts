@@ -1,6 +1,7 @@
 import com.github.javaparser.*;
 import com.github.javaparser.ast.*;
 import com.github.javaparser.ast.body.*;
+import com.github.javaparser.ast.expr.*;
 //import com.github.javaparser.ast.body.type.*;
 
 import java.nio.file.Files;
@@ -175,12 +176,18 @@ public class MoveNegativeTests
           methodsToRemove.add(method);
         }
         //check to see if this method is a potential helper method (non-public method)
-        else if(!method.getModifiers().contains(Modifier.PUBLIC))
+        else if(!isTestCase(method))
         {
           MethodDeclaration methodCopy = method.clone();
           classDecNew.addMember(methodCopy);
           //don't remove the method from the original class
         }
+      }
+      //new addition
+      else if(member instanceof FieldDeclaration || member instanceof ClassOrInterfaceDeclaration)
+      {
+        //copy all class fields
+        classDecNew.addMember(member.clone());
       }
     }
 
@@ -269,5 +276,19 @@ public class MoveNegativeTests
   {
     String[] segments = fullClassName.split("/");
     return segments[segments.length - 1];
+  }
+
+  private static boolean isTestCase(MethodDeclaration method)
+  {
+    //modeled off clegoues.genprog4java.fitness.Fitness::looksLikeATest
+    NodeList<AnnotationExpr> annotations = method.getAnnotations();
+    return annotations.contains(new MarkerAnnotationExpr(new Name("org.junit.Test")))
+        || annotations.contains(new MarkerAnnotationExpr(new Name("Test")))
+        || (
+          method.getParameters().size() == 0
+          && method.getType().isVoidType()
+          && method.getModifiers().contains(Modifier.PUBLIC)
+          && method.getName().asString().startsWith("test")
+        );
   }
 }
