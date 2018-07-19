@@ -151,8 +151,10 @@ public class MoveNegativeTests
     ClassOrInterfaceDeclaration classDecOrig = classDecOptional.get();
     String newShortClassName = origShortClassName + "_FailingTest";
     ClassOrInterfaceDeclaration classDecNew = newCU.addClass(newShortClassName);
-    classDecNew.setExtendedTypes(classDecOrig.getExtendedTypes());
-    classDecNew.setImplementedTypes(classDecOrig.getImplementedTypes());
+
+    //don't copy the inheritence
+    //classDecNew.setExtendedTypes(classDecOrig.getExtendedTypes());
+    //classDecNew.setImplementedTypes(classDecOrig.getImplementedTypes());
 
     //search for methods to move
     NodeList<BodyDeclaration<?>> membersOfOrigClass = classDecOrig.getMembers();
@@ -171,7 +173,13 @@ public class MoveNegativeTests
           //schedule to remove the original copy of the method from the old file
           //cannot remove method immediately, as it will cause a ConcurrentModificationException
           methodsToRemove.add(method);
-          //method.remove(); //method inherited from its parent Node->BodyDeclaration->CallableDeclaration
+        }
+        //check to see if this method is a potential helper method (non-public method)
+        else if(!method.getModifiers().contains(Modifier.PUBLIC))
+        {
+          MethodDeclaration methodCopy = method.clone();
+          classDecNew.addMember(methodCopy);
+          //don't remove the method from the original class
         }
       }
     }
@@ -179,6 +187,8 @@ public class MoveNegativeTests
     //remove the failing methods from the original file
     for (MethodDeclaration method : methodsToRemove)
       method.remove(); //method inherited from its parent Node->BodyDeclaration->CallableDeclaration
+
+
 
     //write out the modified class w/ positive tests to pathToDaikonTests before adding timeout checks
     {

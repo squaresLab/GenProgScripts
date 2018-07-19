@@ -20,7 +20,7 @@
 # Example usage, VM:
 #./prepareBug.sh Math 2 allHuman 100 ExamplesCheckedOut /usr/lib/jvm/java-7-oracle/ /usr/lib/jvm/java-8-oracle/ true <path to neg.test> true <path to pos.test>
 
-if [ "$#" -ne 14 ]; then
+if [ "$#" -ne 15 ]; then
     echo "This script should be run with 12 parameters:"
 	echo "1st param: project name, sentence case (ex: Lang, Chart, Closure, Math, Time)"
 	echo "2nd param: bug number (ex: 1,2,3,4,...)"
@@ -36,6 +36,7 @@ if [ "$#" -ne 14 ]; then
 	echo "12th param is the path to the directory containing the class files of the tests relative to the path to the defects4j bug"
   echo "13th param is the timeout length for unit tests (in milliseconds)"
   echo "14th param is the name of the directory that will contain tests for Daikon to learn invariants on (will be created if required)"
+  echo "15th param is the mode of the invariant checker"
     exit 0
 fi
 
@@ -53,6 +54,7 @@ POSTESTPATH="${11}"
 TESTFOLDER="${12}"
 TIMEOUT="${13}"
 DAIKONTESTS="${14}"
+INVCHKMODE="${15}"
 
 BASEDIR=$PWD
 
@@ -153,6 +155,7 @@ testClassPath=$TESTCP
 srcClassPath=$COMPILECP
 compileCommand = $D4J_HOME/$BUGSFOLDER/$LOWERCASEPACKAGE$2Buggy/runCompile.sh
 targetClassName = $BUGWD/bugfiles.txt
+invariantCheckerMode = $INVCHKMODE
 
 # 0.1 for GenProg and 1.0 for TrpAutoRepair and PAR
 sample=0.1
