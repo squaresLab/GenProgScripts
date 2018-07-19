@@ -4,7 +4,7 @@ from subprocess import call
 num_threads = 40
 def run_simulations(n):
     (name, num)=n
-    #tag=name+num+".out"
+    
     call(["bash","runGenProg.sh",name,num])
     #f = open(tag,'w+')
     #f.write(st)
@@ -31,7 +31,7 @@ for i in range (3, 4):
     elif i==5:
         name="Time"
         max=27
-    for j in range (2, max):
+    for j in range (51, 52):
         taskList.append((name,str(j)))
 
 p = Pool(num_threads)

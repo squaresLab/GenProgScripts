@@ -1,0 +1,556 @@
+Check out cc82d38a to /home/ylyu1/genprog/defects4j/BuggyGP4J/math12Buggy.. OK
+Init local repository...................................................... OK
+Tag post-fix revision...................................................... OK
+Initialize fixed program version........................................... OK
+Apply patch................................................................ OK
+Initialize buggy program version........................................... OK
+Diff cc82d38a:67fc8709..................................................... OK
+Apply patch................................................................ OK
+Tag pre-fix revision....................................................... OK
+Check out program version: Math-12b........................................ OK
+OpenJDK 64-Bit Server VM warning: ignoring option MaxPermSize=1G; support was removed in 8.0
+Running ant (export.dir.src.tests)......................................... OK
+
+OpenJDK 64-Bit Server VM warning: ignoring option MaxPermSize=1G; support was removed in 8.0
+Running ant (export.tests.trigger)......................................... OK
+
+Running ant (compile)...................................................... OK
+Running ant (compile.tests)................................................ FAIL
+OpenJDK 64-Bit Server VM warning: ignoring option MaxPermSize=1G; support was removed in 8.0
+Buildfile: /home/ylyu1/genprog/defects4j/framework/projects/defects4j.build.xml
+
+init:
+     [echo] -------- Commons MATH 3.1-SNAPSHOT --------
+
+compile:
+
+check-availability:
+     [echo] doing check-availability...
+
+download-dependencies:
+     [echo] doing download-dependencies...
+
+download-junit:
+
+compile.tests:
+    [javac] Compiling 446 source files to /home/ylyu1/genprog/defects4j/BuggyGP4J/math12Buggy/target/test-classes
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/Random.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/concurrent/Callable.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Object.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Double.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/String.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Exception.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/annotation/Retention.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/annotation/Target.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/annotation/Annotation.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Class.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/io/ByteArrayInputStream.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/io/ByteArrayOutputStream.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/io/IOException.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/io/ObjectInputStream.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/io/ObjectOutputStream.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/text/DecimalFormat.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/reflect/Field.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/HashMap.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/Map.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/SecurityException.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/NoSuchFieldException.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/IllegalArgumentException.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/IllegalAccessException.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/Arrays.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/List.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Deprecated.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/ArrayList.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/concurrent/ThreadPoolExecutor.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/concurrent/ArrayBlockingQueue.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/concurrent/TimeUnit.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/concurrent/Future.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/concurrent/ExecutionException.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/concurrent/atomic/AtomicInteger.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/InterruptedException.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/Collection.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/text/NumberFormat.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/text/ParsePosition.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/Locale.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/io/Serializable.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/Collections.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/ClassNotFoundException.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/io/BufferedReader.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/io/InputStream.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/io/InputStreamReader.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/text/MessageFormat.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/Enumeration.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/ResourceBundle.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/math/BigDecimal.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/math/BigInteger.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Comparable.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Integer.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/LinkedList.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/Iterator.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/HashSet.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/Set.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/Comparator.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/awt/geom/AffineTransform.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/reflect/Array.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/UnsupportedOperationException.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/NoSuchElementException.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Enum.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/io/DataInputStream.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/reflect/InvocationTargetException.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/reflect/Method.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/RuntimeException.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Throwable.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/io/ObjectInput.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/io/ObjectOutput.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/io/Externalizable.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Iterable.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/awt/geom/Point2D.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/awt/geom/Point2D$Double.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/SuppressWarnings.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/io/File.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/net/URL.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/concurrent/Executors.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/concurrent/ExecutorService.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/io/StringReader.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Long.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/math/MathContext.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/reflect/Modifier.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/reflect/Type.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Float.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/ConcurrentModificationException.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/Map$Entry.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/Random.class): warning: Cannot find annotation method 'value()' in type 'Profile+Annotation': class file for jdk.Profile+Annotation not found
+    [javac] /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/concurrent/Callable.class): warning: Cannot find annotation method 'value()' in type 'Profile+Annotation'
+    [javac] /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Object.class): warning: Cannot find annotation method 'value()' in type 'Profile+Annotation'
+    [javac] /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Double.class): warning: Cannot find annotation method 'value()' in type 'Profile+Annotation'
+    [javac] /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/String.class): warning: Cannot find annotation method 'value()' in type 'Profile+Annotation'
+    [javac] /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Exception.class): warning: Cannot find annotation method 'value()' in type 'Profile+Annotation'
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/annotation/RetentionPolicy.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/annotation/ElementType.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/annotation/Retention.class): warning: Cannot find annotation method 'value()' in type 'Profile+Annotation'
+    [javac] /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/annotation/Target.class): warning: Cannot find annotation method 'value()' in type 'Profile+Annotation'
+    [javac] /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/annotation/Annotation.class): warning: Cannot find annotation method 'value()' in type 'Profile+Annotation'
+    [javac] /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Class.class): warning: Cannot find annotation method 'value()' in type 'Profile+Annotation'
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Override.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/IllegalStateException.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/io/ByteArrayInputStream.class): warning: Cannot find annotation method 'value()' in type 'Profile+Annotation'
+    [javac] /home/ylyu1/genprog/defects4j/BuggyGP4J/math12Buggy/src/test/java/org/apache/commons/math3/distribution/GammaDistributionTest_FailingTest.java:55: error: cannot find symbol
+    [javac]                 final double actualOld = density(x, shape, 1.0);
+    [javac]                                          ^
+    [javac]   symbol:   method density(double,double,double)
+    [javac]   location: class GammaDistributionTest_FailingTest
+    [javac] /home/ylyu1/genprog/defects4j/BuggyGP4J/math12Buggy/src/test/java/org/apache/commons/math3/distribution/LogNormalDistributionTest_FailingTest.java:12: error: cannot find symbol
+    [javac]         LogNormalDistribution distribution = (LogNormalDistribution) getDistribution();
+    [javac]                                                                      ^
+    [javac]   symbol:   method getDistribution()
+    [javac]   location: class LogNormalDistributionTest_FailingTest
+    [javac] /home/ylyu1/genprog/defects4j/BuggyGP4J/math12Buggy/src/test/java/org/apache/commons/math3/distribution/LogNormalDistributionTest_FailingTest.java:15: error: cannot find symbol
+    [javac]         setCumulativeTestPoints(new double[] { mu - 2 * sigma, mu - sigma, mu, mu + sigma, mu + 2 * sigma, mu + 3 * sigma, mu + 4 * sigma, mu + 5 * sigma });
+    [javac]         ^
+    [javac]   symbol:   method setCumulativeTestPoints(double[])
+    [javac]   location: class LogNormalDistributionTest_FailingTest
+    [javac] /home/ylyu1/genprog/defects4j/BuggyGP4J/math12Buggy/src/test/java/org/apache/commons/math3/distribution/LogNormalDistributionTest_FailingTest.java:16: error: cannot find symbol
+    [javac]         verifyCumulativeProbabilities();
+    [javac]         ^
+    [javac]   symbol:   method verifyCumulativeProbabilities()
+    [javac]   location: class LogNormalDistributionTest_FailingTest
+    [javac] /home/ylyu1/genprog/defects4j/BuggyGP4J/math12Buggy/src/test/java/org/apache/commons/math3/distribution/NormalDistributionTest_FailingTest.java:12: error: cannot find symbol
+    [javac]         NormalDistribution distribution = (NormalDistribution) getDistribution();
+    [javac]                                                                ^
+    [javac]   symbol:   method getDistribution()
+    [javac]   location: class NormalDistributionTest_FailingTest
+    [javac] /home/ylyu1/genprog/defects4j/BuggyGP4J/math12Buggy/src/test/java/org/apache/commons/math3/distribution/NormalDistributionTest_FailingTest.java:15: error: cannot find symbol
+    [javac]         setCumulativeTestPoints(new double[] { mu - 2 * sigma, mu - sigma, mu, mu + sigma, mu + 2 * sigma, mu + 3 * sigma, mu + 4 * sigma, mu + 5 * sigma });
+    [javac]         ^
+    [javac]   symbol:   method setCumulativeTestPoints(double[])
+    [javac]   location: class NormalDistributionTest_FailingTest
+    [javac] /home/ylyu1/genprog/defects4j/BuggyGP4J/math12Buggy/src/test/java/org/apache/commons/math3/distribution/NormalDistributionTest_FailingTest.java:17: error: cannot find symbol
+    [javac]         setCumulativeTestValues(new double[] { 0.02275013194817921, 0.158655253931457, 0.5, 0.841344746068543, 0.977249868051821, 0.99865010196837, 0.999968328758167, 0.999999713348428 });
+    [javac]         ^
+    [javac]   symbol:   method setCumulativeTestValues(double[])
+    [javac]   location: class NormalDistributionTest_FailingTest
+    [javac] /home/ylyu1/genprog/defects4j/BuggyGP4J/math12Buggy/src/test/java/org/apache/commons/math3/distribution/NormalDistributionTest_FailingTest.java:18: error: cannot find symbol
+    [javac]         verifyCumulativeProbabilities();
+    [javac]         ^
+    [javac]   symbol:   method verifyCumulativeProbabilities()
+    [javac]   location: class NormalDistributionTest_FailingTest
+    [javac] Note: Some input files use or override a deprecated API.
+    [javac] Note: Recompile with -Xlint:deprecation for details.
+    [javac] Note: /home/ylyu1/genprog/defects4j/BuggyGP4J/math12Buggy/src/test/java/org/apache/commons/math3/PerfTestUtils.java uses unchecked or unsafe operations.
+    [javac] Note: Recompile with -Xlint:unchecked for details.
+    [javac] 8 errors
+    [javac] 100 warnings
+
+BUILD FAILED
+/home/ylyu1/genprog/defects4j/BuggyGP4J/math12Buggy/build.xml:185: Compile failed; see the compiler error output for details.
+
+Total time: 2 seconds
+Executed command:  cd /home/ylyu1/genprog/defects4j/BuggyGP4J/math12Buggy && ant -f /home/ylyu1/genprog/defects4j/framework/projects/defects4j.build.xml -Dd4j.home=/home/ylyu1/genprog/defects4j -Dbasedir=/home/ylyu1/genprog/defects4j/BuggyGP4J/math12Buggy  compile.tests 2>&1
+Cannot compile tests! at /home/ylyu1/genprog/defects4j/framework/bin/d4j/d4j-compile line 83.
+Compilation failed in require at /home/ylyu1/genprog/defects4j/framework/bin/defects4j line 155.
+OpenJDK 64-Bit Server VM warning: ignoring option MaxPermSize=1G; support was removed in 8.0
+Running ant (export.dir.src.tests)......................................... OK
+
+OpenJDK 64-Bit Server VM warning: ignoring option MaxPermSize=1G; support was removed in 8.0
+Running ant (export.dir.bin.classes)....................................... OK
+
+OpenJDK 64-Bit Server VM warning: ignoring option MaxPermSize=1G; support was removed in 8.0
+Running ant (export.cp.compile)............................................ OK
+
+OpenJDK 64-Bit Server VM warning: ignoring option MaxPermSize=1G; support was removed in 8.0
+Running ant (export.cp.test)............................................... OK
+
+OpenJDK 64-Bit Server VM warning: ignoring option MaxPermSize=1G; support was removed in 8.0
+Running ant (export.dir.src.classes)....................................... OK
+
+OpenJDK 64-Bit Server VM warning: ignoring option MaxPermSize=1G; support was removed in 8.0
+Running ant (export.tests.all)............................................. FAIL
+OpenJDK 64-Bit Server VM warning: ignoring option MaxPermSize=1G; support was removed in 8.0
+Buildfile: /home/ylyu1/genprog/defects4j/framework/projects/defects4j.build.xml
+
+sanity.check:
+
+init:
+     [echo] -------- Commons MATH 3.1-SNAPSHOT --------
+
+compile:
+
+check-availability:
+     [echo] doing check-availability...
+
+download-dependencies:
+     [echo] doing download-dependencies...
+
+download-junit:
+
+compile.tests:
+    [javac] Compiling 355 source files to /home/ylyu1/genprog/defects4j/BuggyGP4J/math12Buggy/target/test-classes
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/io/BufferedReader.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/io/IOException.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/io/InputStream.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/io/InputStreamReader.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Object.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/String.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/List.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/ArrayList.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Double.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/text/MessageFormat.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/Locale.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/Arrays.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/io/ObjectOutputStream.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/io/ObjectInputStream.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/io/ByteArrayOutputStream.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/io/ByteArrayInputStream.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/ClassNotFoundException.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Exception.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/Enumeration.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/ResourceBundle.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/Random.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/math/BigDecimal.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/math/BigInteger.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/text/NumberFormat.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Comparable.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Integer.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/Collections.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/LinkedList.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/Iterator.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/concurrent/TimeUnit.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/HashSet.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/Set.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/Comparator.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/text/ParsePosition.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/reflect/Field.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/awt/geom/AffineTransform.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/io/Serializable.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/reflect/Array.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/UnsupportedOperationException.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/NoSuchElementException.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Enum.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/io/DataInputStream.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/reflect/InvocationTargetException.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/reflect/Method.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Class.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/IllegalAccessException.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/IllegalArgumentException.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/RuntimeException.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Throwable.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/io/ObjectInput.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/io/ObjectOutput.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/io/Externalizable.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/Collection.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Iterable.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/awt/geom/Point2D.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/awt/geom/Point2D$Double.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/text/DecimalFormat.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/SuppressWarnings.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/io/File.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/net/URL.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/concurrent/Executors.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/concurrent/ExecutorService.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/concurrent/Callable.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/concurrent/Future.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/concurrent/ExecutionException.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/InterruptedException.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/io/StringReader.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/HashMap.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/Map.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Long.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/math/MathContext.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/reflect/Modifier.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/reflect/Type.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Float.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/ConcurrentModificationException.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/Map$Entry.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/io/BufferedReader.class): warning: Cannot find annotation method 'value()' in type 'Profile+Annotation': class file for jdk.Profile+Annotation not found
+    [javac] /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/io/IOException.class): warning: Cannot find annotation method 'value()' in type 'Profile+Annotation'
+    [javac] /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/io/InputStream.class): warning: Cannot find annotation method 'value()' in type 'Profile+Annotation'
+    [javac] /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/io/InputStreamReader.class): warning: Cannot find annotation method 'value()' in type 'Profile+Annotation'
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/annotation/Retention.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/annotation/RetentionPolicy.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/annotation/Target.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/annotation/ElementType.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Object.class): warning: Cannot find annotation method 'value()' in type 'Profile+Annotation'
+    [javac] /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/String.class): warning: Cannot find annotation method 'value()' in type 'Profile+Annotation'
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/annotation/Annotation.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Override.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/List.class): warning: Cannot find annotation method 'value()' in type 'Profile+Annotation'
+    [javac] /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/ArrayList.class): warning: Cannot find annotation method 'value()' in type 'Profile+Annotation'
+    [javac] warning: /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/ArithmeticException.class): major version 52 is newer than 51, the highest major version supported by this compiler.
+    [javac]   It is recommended that the compiler be upgraded.
+    [javac] /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Double.class): warning: Cannot find annotation method 'value()' in type 'Profile+Annotation'
+    [javac] /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/text/MessageFormat.class): warning: Cannot find annotation method 'value()' in type 'Profile+Annotation'
+    [javac] /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/Locale.class): warning: Cannot find annotation method 'value()' in type 'Profile+Annotation'
+    [javac] /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/util/Arrays.class): warning: Cannot find annotation method 'value()' in type 'Profile+Annotation'
+    [javac] /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/io/ObjectOutputStream.class): warning: Cannot find annotation method 'value()' in type 'Profile+Annotation'
+    [javac] /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/io/ObjectInputStream.class): warning: Cannot find annotation method 'value()' in type 'Profile+Annotation'
+    [javac] /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/io/ByteArrayOutputStream.class): warning: Cannot find annotation method 'value()' in type 'Profile+Annotation'
+    [javac] /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/io/ByteArrayInputStream.class): warning: Cannot find annotation method 'value()' in type 'Profile+Annotation'
+    [javac] /usr/lib/jvm/java-8-openjdk-amd64/lib/ct.sym(META-INF/sym/rt.jar/java/lang/ClassNotFoundException.class): warning: Cannot find annotation method 'value()' in type 'Profile+Annotation'
+    [javac] /home/ylyu1/genprog/defects4j/BuggyGP4J/math12Buggy/src/test/java/org/apache/commons/math3/distribution/GammaDistributionTest_FailingTest.java:55: error: cannot find symbol
+    [javac]                 final double actualOld = density(x, shape, 1.0);
+    [javac]                                          ^
+    [javac]   symbol:   method density(double,double,double)
+    [javac]   location: class GammaDistributionTest_FailingTest
+    [javac] /home/ylyu1/genprog/defects4j/BuggyGP4J/math12Buggy/src/test/java/org/apache/commons/math3/distribution/LogNormalDistributionTest_FailingTest.java:12: error: cannot find symbol
+    [javac]         LogNormalDistribution distribution = (LogNormalDistribution) getDistribution();
+    [javac]                                                                      ^
+    [javac]   symbol:   method getDistribution()
+    [javac]   location: class LogNormalDistributionTest_FailingTest
+    [javac] /home/ylyu1/genprog/defects4j/BuggyGP4J/math12Buggy/src/test/java/org/apache/commons/math3/distribution/LogNormalDistributionTest_FailingTest.java:15: error: cannot find symbol
+    [javac]         setCumulativeTestPoints(new double[] { mu - 2 * sigma, mu - sigma, mu, mu + sigma, mu + 2 * sigma, mu + 3 * sigma, mu + 4 * sigma, mu + 5 * sigma });
+    [javac]         ^
+    [javac]   symbol:   method setCumulativeTestPoints(double[])
+    [javac]   location: class LogNormalDistributionTest_FailingTest
+    [javac] /home/ylyu1/genprog/defects4j/BuggyGP4J/math12Buggy/src/test/java/org/apache/commons/math3/distribution/LogNormalDistributionTest_FailingTest.java:16: error: cannot find symbol
+    [javac]         verifyCumulativeProbabilities();
+    [javac]         ^
+    [javac]   symbol:   method verifyCumulativeProbabilities()
+    [javac]   location: class LogNormalDistributionTest_FailingTest
+    [javac] /home/ylyu1/genprog/defects4j/BuggyGP4J/math12Buggy/src/test/java/org/apache/commons/math3/distribution/NormalDistributionTest_FailingTest.java:12: error: cannot find symbol
+    [javac]         NormalDistribution distribution = (NormalDistribution) getDistribution();
+    [javac]                                                                ^
+    [javac]   symbol:   method getDistribution()
+    [javac]   location: class NormalDistributionTest_FailingTest
+    [javac] /home/ylyu1/genprog/defects4j/BuggyGP4J/math12Buggy/src/test/java/org/apache/commons/math3/distribution/NormalDistributionTest_FailingTest.java:15: error: cannot find symbol
+    [javac]         setCumulativeTestPoints(new double[] { mu - 2 * sigma, mu - sigma, mu, mu + sigma, mu + 2 * sigma, mu + 3 * sigma, mu + 4 * sigma, mu + 5 * sigma });
+    [javac]         ^
+    [javac]   symbol:   method setCumulativeTestPoints(double[])
+    [javac]   location: class NormalDistributionTest_FailingTest
+    [javac] /home/ylyu1/genprog/defects4j/BuggyGP4J/math12Buggy/src/test/java/org/apache/commons/math3/distribution/NormalDistributionTest_FailingTest.java:17: error: cannot find symbol
+    [javac]         setCumulativeTestValues(new double[] { 0.02275013194817921, 0.158655253931457, 0.5, 0.841344746068543, 0.977249868051821, 0.99865010196837, 0.999968328758167, 0.999999713348428 });
+    [javac]         ^
+    [javac]   symbol:   method setCumulativeTestValues(double[])
+    [javac]   location: class NormalDistributionTest_FailingTest
+    [javac] /home/ylyu1/genprog/defects4j/BuggyGP4J/math12Buggy/src/test/java/org/apache/commons/math3/distribution/NormalDistributionTest_FailingTest.java:18: error: cannot find symbol
+    [javac]         verifyCumulativeProbabilities();
+    [javac]         ^
+    [javac]   symbol:   method verifyCumulativeProbabilities()
+    [javac]   location: class NormalDistributionTest_FailingTest
+    [javac] Note: Some input files use or override a deprecated API.
+    [javac] Note: Recompile with -Xlint:deprecation for details.
+    [javac] 8 errors
+    [javac] 100 warnings
+
+BUILD FAILED
+/home/ylyu1/genprog/defects4j/BuggyGP4J/math12Buggy/build.xml:185: Compile failed; see the compiler error output for details.
+
+Total time: 2 seconds
+Executed command:  cd /home/ylyu1/genprog/defects4j/BuggyGP4J/math12Buggy && ant -f /home/ylyu1/genprog/defects4j/framework/projects/defects4j.build.xml -Dd4j.home=/home/ylyu1/genprog/defects4j -Dbasedir=/home/ylyu1/genprog/defects4j/BuggyGP4J/math12Buggy -Dfile.export=/home/ylyu1/genprog/defects4j/BuggyGP4J/math12Buggy/.export.tests.all export.tests.all 2>&1
+Cannot export property tests.all at /home/ylyu1/genprog/defects4j/framework/bin/d4j/d4j-export line 112.
+Compilation failed in require at /home/ylyu1/genprog/defects4j/framework/bin/defects4j line 155.
+OpenJDK 64-Bit Server VM warning: ignoring option MaxPermSize=1G; support was removed in 8.0
+Running ant (export.classes.modified)...................................... OK
+
+Note: ./org/apache/commons/math3/distribution/GammaDistributionTest.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.

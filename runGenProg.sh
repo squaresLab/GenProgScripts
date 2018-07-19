@@ -1,6 +1,6 @@
 export D4J_HOME="/home/ylyu1/genprog/defects4j"
 export GP4J_HOME="/home/ylyu1/genprog/genprog4java"
-export DAIKONDIR="/home/zhenyud/Desktop/daikon"
+export DAIKONDIR="/home/ylyu1/genprog/daikon-5.6.6"
 
 P1=$1
 P2=$2
