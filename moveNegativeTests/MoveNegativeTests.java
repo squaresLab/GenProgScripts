@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.io.FileNotFoundException;
 import java.util.EnumSet;
 import java.lang.Integer;
+import java.util.Iterator;
 
 
 //requires java 1.8
@@ -153,7 +154,7 @@ public class MoveNegativeTests
     String newShortClassName = origShortClassName + "_FailingTest";
     ClassOrInterfaceDeclaration classDecNew = newCU.addClass(newShortClassName);
 
-    //don't copy the inheritence
+    //don't copy the inheritence, can lead to problems with abstract test classes
     //classDecNew.setExtendedTypes(classDecOrig.getExtendedTypes());
     //classDecNew.setImplementedTypes(classDecOrig.getImplementedTypes());
 
@@ -165,6 +166,21 @@ public class MoveNegativeTests
       if(member instanceof MethodDeclaration)
       {
         MethodDeclaration method = (MethodDeclaration) member;
+
+        //get rid of any @Override annotations, since any inherited superclass is gone
+        NodeList<AnnotationExpr> methodAnnotations =  method.getAnnotations();
+        Iterator<AnnotationExpr> annotIter = methodAnnotations.iterator();
+        while (annotIter.hasNext())
+        {
+          AnnotationExpr annot = annotIter.next();
+          if (annot.getName().asString().equals("Override"))
+          {
+            annotIter.remove();
+            break;
+          }
+        }
+        method.setAnnotations(methodAnnotations);
+
         if(methodsOfClazz.contains(method.getName().asString()))
         {
           //this method needs to move
@@ -175,7 +191,7 @@ public class MoveNegativeTests
           //cannot remove method immediately, as it will cause a ConcurrentModificationException
           methodsToRemove.add(method);
         }
-        //check to see if this method is a potential helper method (non-public method)
+        //check to see if this method is a potential helper method (non-test method)
         else if(!isTestCase(method))
         {
           MethodDeclaration methodCopy = method.clone();
@@ -250,7 +266,7 @@ public class MoveNegativeTests
   {
     //repeated imports is OK, no need to check whether import is already existing
     cu.addImport("org.junit.Rule");
-    cu.addImport("org.junit.Test");
+    //cu.addImport("org.junit.Test");
     cu.addImport("org.junit.rules.Timeout");
 
     VariableDeclarator timeoutVD = new VariableDeclarator(JavaParser.parseClassOrInterfaceType("Timeout"), "globalTimeout")
