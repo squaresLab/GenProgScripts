@@ -99,7 +99,7 @@ echo "right before compiling gp4j"
 if [ -d "$GP4J_HOME" ]; then
 	echo "compiling gp4j"
   cd "$GP4J_HOME"
-  mvn package
+  #mvn package
   if [[ $? -ne 0 ]]; then
       echo "error building GenProg; exiting"
       exit 1
