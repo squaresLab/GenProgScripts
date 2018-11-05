@@ -2,7 +2,7 @@ import com.github.javaparser.*;
 import com.github.javaparser.ast.*;
 import com.github.javaparser.ast.body.*;
 import com.github.javaparser.ast.expr.*;
-//import com.github.javaparser.ast.body.type.*;
+import com.github.javaparser.ast.type.*;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -158,6 +158,10 @@ public class MoveNegativeTests
     //classDecNew.setExtendedTypes(classDecOrig.getExtendedTypes());
     //classDecNew.setImplementedTypes(classDecOrig.getImplementedTypes());
 
+    //if the original class inherits TestCase, the new class will also inherit TestCase
+    if(extendsTestCase(classDecOrig))
+      classDecNew.addExtendedType("TestCase");
+
     //search for methods to move
     NodeList<BodyDeclaration<?>> membersOfOrigClass = classDecOrig.getMembers();
     Collection<MethodDeclaration> methodsToRemove = new LinkedList<>();
@@ -306,5 +310,15 @@ public class MoveNegativeTests
           && method.getModifiers().contains(Modifier.PUBLIC)
           && method.getName().asString().startsWith("test")
         );
+  }
+
+  private static boolean extendsTestCase(ClassOrInterfaceDeclaration c)
+  {
+    for(ClassOrInterfaceType extendedClass : c.getExtendedTypes())
+    {
+      if(extendedClass.getName().asString().equals("TestCase"))
+        return true;
+    }
+    return false;
   }
 }
