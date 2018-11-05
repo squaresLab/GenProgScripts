@@ -26,6 +26,8 @@
 # 13th param is set to \"true\" if positive tests are to be specified using sampled tests else set this to \"false\""
 # 14th param is the path to file containing sampled positive tests"
 # 15th param is the path to the directory containing the class files of the tests relative to the path to the defects4j bug
+# 16th param is the timeout length for unit tests (in milliseconds)
+# 17th param is the mode of the invariant checker
 
 
 
@@ -99,7 +101,7 @@ echo "right before compiling gp4j"
 if [ -d "$GP4J_HOME" ]; then
 	echo "compiling gp4j"
   cd "$GP4J_HOME"
-  mvn package
+  #mvn package
   if [[ $? -ne 0 ]]; then
       echo "error building GenProg; exiting"
       exit 1

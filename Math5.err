@@ -1,0 +1,89 @@
+Check out e54a1c92 to /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy... OK
+Init local repository...................................................... OK
+Tag post-fix revision...................................................... OK
+Initialize fixed program version........................................... OK
+Apply patch................................................................ OK
+Initialize buggy program version........................................... OK
+Diff e54a1c92:f5bcba81..................................................... OK
+Apply patch................................................................ OK
+Tag pre-fix revision....................................................... OK
+Check out program version: Math-5b......................................... OK
+OpenJDK 64-Bit Server VM warning: ignoring option MaxPermSize=1G; support was removed in 8.0
+Running ant (export.dir.src.tests)......................................... OK
+
+OpenJDK 64-Bit Server VM warning: ignoring option MaxPermSize=1G; support was removed in 8.0
+Running ant (export.tests.trigger)......................................... OK
+
+Running ant (compile)...................................................... OK
+Running ant (compile.tests)................................................ OK
+OpenJDK 64-Bit Server VM warning: ignoring option MaxPermSize=1G; support was removed in 8.0
+Running ant (export.dir.src.tests)......................................... OK
+
+OpenJDK 64-Bit Server VM warning: ignoring option MaxPermSize=1G; support was removed in 8.0
+Running ant (export.dir.bin.classes)....................................... OK
+
+OpenJDK 64-Bit Server VM warning: ignoring option MaxPermSize=1G; support was removed in 8.0
+Running ant (export.cp.compile)............................................ OK
+
+OpenJDK 64-Bit Server VM warning: ignoring option MaxPermSize=1G; support was removed in 8.0
+Running ant (export.cp.test)............................................... OK
+
+OpenJDK 64-Bit Server VM warning: ignoring option MaxPermSize=1G; support was removed in 8.0
+Running ant (export.dir.src.classes)....................................... OK
+
+OpenJDK 64-Bit Server VM warning: ignoring option MaxPermSize=1G; support was removed in 8.0
+Running ant (export.tests.all)............................................. OK
+
+OpenJDK 64-Bit Server VM warning: ignoring option MaxPermSize=1G; support was removed in 8.0
+Running ant (export.classes.modified)...................................... OK
+
+cp command: [cp, -R, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/target/classes/org, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/tmp/d_variant0]
+cp command: [cp, -R, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/target/classes/org, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/tmp/d_variant1]
+cp command: [cp, -R, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/target/classes/org, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/tmp/d_variant2]
+cp command: [cp, -R, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/target/classes/org, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/tmp/d_variant3]
+cp command: [cp, -R, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/target/classes/org, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/tmp/d_variant4]
+cp command: [cp, -R, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/target/classes/org, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/tmp/d_variant5]
+cp command: [cp, -R, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/target/classes/org, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/tmp/d_variant6]
+cp command: [cp, -R, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/target/classes/org, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/tmp/d_variant7]
+cp command: [cp, -R, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/target/classes/org, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/tmp/d_variant8]
+cp command: [cp, -R, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/target/classes/org, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/tmp/d_variant9]
+cp command: [cp, -R, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/target/classes/org, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/tmp/d_variant10]
+cp command: [cp, -R, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/target/classes/org, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/tmp/d_variant11]
+cp command: [cp, -R, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/target/classes/org, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/tmp/d_variant12]
+cp command: [cp, -R, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/target/classes/org, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/tmp/d_variant13]
+cp command: [cp, -R, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/target/classes/org, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/tmp/d_variant14]
+cp command: [cp, -R, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/target/classes/org, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/tmp/d_variant15]
+cp command: [cp, -R, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/target/classes/org, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/tmp/d_variant16]
+cp command: [cp, -R, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/target/classes/org, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/tmp/d_variant17]
+cp command: [cp, -R, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/target/classes/org, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/tmp/d_variant18]
+cp command: [cp, -R, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/target/classes/org, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/tmp/d_variant19]
+cp command: [cp, -R, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/target/classes/org, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/tmp/d_variant20]
+cp command: [cp, -R, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/target/classes/org, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/tmp/d_variant21]
+cp command: [cp, -R, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/target/classes/org, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/tmp/d_variant22]
+cp command: [cp, -R, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/target/classes/org, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/tmp/d_variant23]
+cp command: [cp, -R, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/target/classes/org, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/tmp/d_variant24]
+cp command: [cp, -R, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/target/classes/org, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/tmp/d_variant25]
+cp command: [cp, -R, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/target/classes/org, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/tmp/d_variant26]
+cp command: [cp, -R, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/target/classes/org, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/tmp/d_variant27]
+cp command: [cp, -R, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/target/classes/org, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/tmp/d_variant28]
+cp command: [cp, -R, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/target/classes/org, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/tmp/d_variant29]
+cp command: [cp, -R, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/target/classes/org, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/tmp/d_variant30]
+cp command: [cp, -R, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/target/classes/org, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/tmp/d_variant31]
+cp command: [cp, -R, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/target/classes/org, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/tmp/d_variant32]
+cp command: [cp, -R, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/target/classes/org, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/tmp/d_variant33]
+cp command: [cp, -R, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/target/classes/org, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/tmp/d_variant34]
+cp command: [cp, -R, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/target/classes/org, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/tmp/d_variant35]
+cp command: [cp, -R, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/target/classes/org, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/tmp/d_variant36]
+cp command: [cp, -R, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/target/classes/org, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/tmp/d_variant37]
+cp command: [cp, -R, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/target/classes/org, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/tmp/d_variant38]
+cp command: [cp, -R, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/target/classes/org, /home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/tmp/d_variant39]
+[sh, checker.sh, org.apache.commons.math3.complex.ComplexTest`, .:tmp/d_variant0/:/home/ylyu1/genprog/genprog4java/target/classes/:/home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/target/test-classes/:/home/ylyu1/genprog/genprog4java/lib/junit-4.12.jar:/home/ylyu1/genprog/genprog4java/lib/hamcrest-core-1.3.jar, variant0pos, NOTORIG, /home/ylyu1/genprog/genprog4java, /usr/lib/jvm/java-8-openjdk-amd64, /home/ylyu1/genprog/daikon-5.6.6]
+[sh, checker.sh, org.apache.commons.math3.complex.ComplexTest`, .:tmp/d_variant1/:/home/ylyu1/genprog/genprog4java/target/classes/:/home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/target/test-classes/:/home/ylyu1/genprog/genprog4java/lib/junit-4.12.jar:/home/ylyu1/genprog/genprog4java/lib/hamcrest-core-1.3.jar, variant1pos, NOTORIG, /home/ylyu1/genprog/genprog4java, /usr/lib/jvm/java-8-openjdk-amd64, /home/ylyu1/genprog/daikon-5.6.6]
+[sh, checker.sh, org.apache.commons.math3.complex.ComplexTest`, .:tmp/d_variant2/:/home/ylyu1/genprog/genprog4java/target/classes/:/home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/target/test-classes/:/home/ylyu1/genprog/genprog4java/lib/junit-4.12.jar:/home/ylyu1/genprog/genprog4java/lib/hamcrest-core-1.3.jar, variant2pos, NOTORIG, /home/ylyu1/genprog/genprog4java, /usr/lib/jvm/java-8-openjdk-amd64, /home/ylyu1/genprog/daikon-5.6.6]
+[sh, checker.sh, org.apache.commons.math3.complex.ComplexTest`, .:tmp/d_variant7/:/home/ylyu1/genprog/genprog4java/target/classes/:/home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/target/test-classes/:/home/ylyu1/genprog/genprog4java/lib/junit-4.12.jar:/home/ylyu1/genprog/genprog4java/lib/hamcrest-core-1.3.jar, variant7pos, NOTORIG, /home/ylyu1/genprog/genprog4java, /usr/lib/jvm/java-8-openjdk-amd64, /home/ylyu1/genprog/daikon-5.6.6]
+[sh, checker.sh, org.apache.commons.math3.complex.ComplexTest`, .:tmp/d_variant8/:/home/ylyu1/genprog/genprog4java/target/classes/:/home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/target/test-classes/:/home/ylyu1/genprog/genprog4java/lib/junit-4.12.jar:/home/ylyu1/genprog/genprog4java/lib/hamcrest-core-1.3.jar, variant8pos, NOTORIG, /home/ylyu1/genprog/genprog4java, /usr/lib/jvm/java-8-openjdk-amd64, /home/ylyu1/genprog/daikon-5.6.6]
+[sh, checker.sh, org.apache.commons.math3.complex.ComplexTest`, .:tmp/d_variant9/:/home/ylyu1/genprog/genprog4java/target/classes/:/home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/target/test-classes/:/home/ylyu1/genprog/genprog4java/lib/junit-4.12.jar:/home/ylyu1/genprog/genprog4java/lib/hamcrest-core-1.3.jar, variant9pos, NOTORIG, /home/ylyu1/genprog/genprog4java, /usr/lib/jvm/java-8-openjdk-amd64, /home/ylyu1/genprog/daikon-5.6.6]
+[sh, checker.sh, org.apache.commons.math3.complex.ComplexTest`, .:tmp/d_variant10/:/home/ylyu1/genprog/genprog4java/target/classes/:/home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/target/test-classes/:/home/ylyu1/genprog/genprog4java/lib/junit-4.12.jar:/home/ylyu1/genprog/genprog4java/lib/hamcrest-core-1.3.jar, variant10pos, NOTORIG, /home/ylyu1/genprog/genprog4java, /usr/lib/jvm/java-8-openjdk-amd64, /home/ylyu1/genprog/daikon-5.6.6]
+[sh, checker.sh, org.apache.commons.math3.complex.ComplexTest`, .:tmp/d_variant13/:/home/ylyu1/genprog/genprog4java/target/classes/:/home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/target/test-classes/:/home/ylyu1/genprog/genprog4java/lib/junit-4.12.jar:/home/ylyu1/genprog/genprog4java/lib/hamcrest-core-1.3.jar, variant13pos, NOTORIG, /home/ylyu1/genprog/genprog4java, /usr/lib/jvm/java-8-openjdk-amd64, /home/ylyu1/genprog/daikon-5.6.6]
+[sh, checker.sh, org.apache.commons.math3.complex.ComplexTest`, .:tmp/d_variant23/:/home/ylyu1/genprog/genprog4java/target/classes/:/home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/target/test-classes/:/home/ylyu1/genprog/genprog4java/lib/junit-4.12.jar:/home/ylyu1/genprog/genprog4java/lib/hamcrest-core-1.3.jar, variant23pos, NOTORIG, /home/ylyu1/genprog/genprog4java, /usr/lib/jvm/java-8-openjdk-amd64, /home/ylyu1/genprog/daikon-5.6.6]
+[sh, checker.sh, org.apache.commons.math3.complex.ComplexTest`, .:tmp/d_variant27/:/home/ylyu1/genprog/genprog4java/target/classes/:/home/ylyu1/genprog/defects4j/BuggyGP4J/math5Buggy/target/test-classes/:/home/ylyu1/genprog/genprog4java/lib/junit-4.12.jar:/home/ylyu1/genprog/genprog4java/lib/hamcrest-core-1.3.jar, variant27pos, NOTORIG, /home/ylyu1/genprog/genprog4java, /usr/lib/jvm/java-8-openjdk-amd64, /home/ylyu1/genprog/daikon-5.6.6]
