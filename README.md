@@ -40,7 +40,7 @@ Use runGenProgForBugExperimental.sh
 - For example, the relative path to test class files of Lang projects is `target/tests/`, the relative path for Math projects is `target/test-classes`
 
 16th param is the timeout length for unit tests (in milliseconds)
-
+- We're using `3000` milliseconds
 17th param: 
 - 0: don't incorporate invariant analysis into fitness.
 - 1: deprecated
