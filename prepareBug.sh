@@ -1,5 +1,6 @@
 #!/bin/bash
 
+#This script is called by runGenProgForBug.sh
 #The purpose of this script is to set up the environment to run Genprog of a particular defects4j bug.
 
 #Preconditions:
@@ -18,21 +19,22 @@
 # 7th param is the folder where the java 8 instalation is located
 
 # Example usage, VM:
-#./prepareBug.sh Math 2 allHuman 100 ExamplesCheckedOut /usr/lib/jvm/java-7-oracle/ /usr/lib/jvm/java-8-oracle/ true <path to neg.test> true <path to pos.test>
+#./prepareBug.sh Math 2 allHuman 100 ExamplesCheckedOut gp /usr/lib/jvm/java-7-oracle/ /usr/lib/jvm/java-8-oracle/ true <path to neg.test> true <path to pos.test>
 
-if [ "$#" -ne 11 ]; then
-    echo "This script should be run with 11 parameters:"
+if [ "$#" -ne 12 ]; then
+    echo "This script should be run with 12 parameters:"
 	echo "1st param: project name, sentence case (ex: Lang, Chart, Closure, Math, Time)"
 	echo "2nd param: bug number (ex: 1,2,3,4,...)"
 	echo "3th param: testing option (ex: humanMade, generated)"
 	echo "4th param: test suite sample size (ex: 1, 100)"
 	echo "5th param is the folder where the bug files will be cloned to. Starting from $D4J_HOME"
-	echo "6th param is the folder where the java 7 instalation is located"
-	echo "7th param is the folder where the java 8 instalation is located"
-	echo "8th param is set to \"true\" if negative tests are to be specified using sampled tests else set this to \"false\""
-	echo "9th param is the path to file containing sampled negative tests"
-	echo "10th param is set to \"true\" if positive tests are to be specified using sampled tests else set this to \"false\""
-	echo "11th param is the path to file containing sampled positive tests"
+	echo "6th param is the repair approach to use (e.g., gp, trp, par, all)"
+	echo "7th param is the folder where the java 7 instalation is located"
+	echo "8th param is the folder where the java 8 instalation is located"
+	echo "9th param is set to \"true\" if negative tests are to be specified using sampled tests else set this to \"false\""
+	echo "10th param is the path to file containing sampled negative tests"
+	echo "11th param is set to \"true\" if positive tests are to be specified using sampled tests else set this to \"false\""
+	echo "12th param is the path to file containing sampled positive tests"
     exit 0
 fi
 
@@ -41,17 +43,20 @@ BUGNUMBER="$2"
 OPTION="$3"
 TESTSUITESAMPLE="$4"
 BUGSFOLDER="$5"
-DIROFJAVA7="$6"
-DIROFJAVA8="$7"
-SAMPLENEGTESTS="$8"
-NEGTESTPATH="$9"
-SAMPLEPOSTESTS="${10}"
-POSTESTPATH="${11}"
+APPROACH="$6"
+DIROFJAVA7="$7"
+DIROFJAVA8="$8"
+SAMPLENEGTESTS="$9"
+NEGTESTPATH="${10}"
+SAMPLEPOSTESTS="${11}"
+POSTESTPATH="${12}"
 
 #Add the path of defects4j so the defects4j's commands run 
 export PATH=$PATH:"$D4J_HOME"/framework/bin/
 export PATH=$PATH:"$D4J_HOME"/framework/util/
 export PATH=$PATH:"$D4J_HOME"/major/bin/
+
+currentDir=$(pwd)
 
 #copy these files to the source control
 
@@ -107,54 +112,11 @@ EOM
 
 chmod 777 $D4J_HOME/$BUGSFOLDER/$LOWERCASEPACKAGE$2Buggy/runCompile.sh
 
+cd $currentDir
+
+./createConfigFile.sh $LOWERCASEPACKAGE $BUGNUMBER $BUGSFOLDER $APPROACH $DIROFJAVA7 $SRCFOLDER $CONFIGLIBS $WD $TESTCP $COMPILECP
 
 cd $BUGWD
-
-#Create config file 
-FILE=$D4J_HOME/$BUGSFOLDER/$LOWERCASEPACKAGE$2Buggy/defects4j.config
-/bin/cat <<EOM >$FILE
-seed = 0
-sanity = yes
-popsize = 40
-javaVM = $DIROFJAVA7/jre/bin/java
-workingDir = $D4J_HOME/$BUGSFOLDER/$LOWERCASEPACKAGE$2Buggy/
-outputDir = $D4J_HOME/$BUGSFOLDER/$LOWERCASEPACKAGE$2Buggy/tmp
-classSourceFolder = $D4J_HOME/$BUGSFOLDER/$LOWERCASEPACKAGE$2Buggy/$SRCFOLDER
-libs = $CONFIGLIBS
-sourceDir = $WD
-positiveTests = $D4J_HOME/$BUGSFOLDER/$LOWERCASEPACKAGE$2Buggy/pos.tests
-negativeTests = $D4J_HOME/$BUGSFOLDER/$LOWERCASEPACKAGE$2Buggy/neg.tests
-jacocoPath = $GP4J_HOME/lib/jacocoagent.jar
-testClassPath=$TESTCP
-srcClassPath=$COMPILECP
-compileCommand = $D4J_HOME/$BUGSFOLDER/$LOWERCASEPACKAGE$2Buggy/runCompile.sh
-targetClassName = $BUGWD/bugfiles.txt
-testGranularity=method
-
-# 0.1 for GenProg and 1.0 for TrpAutoRepair and PAR
-sample=1.0  
-
-# edits for PAR, GenProg, TrpAutoRepair
-#edits=append;replace;delete;FUNREP;PARREP;PARADD;PARREM;EXPREP;EXPADD;EXPREM;NULLCHECK;OBJINIT;RANGECHECK;SIZECHECK;CASTCHECK;LBOUNDSET;UBOUNDSET;OFFBYONE;SEQEXCH;CASTERMUT;CASTEEMUT
-edits=append;replace;delete
-#edits=FUNREP;PARREP;PARADD;PARREM;EXPREP;EXPADD;EXPREM;NULLCHECK;OBJINIT;RANGECHECK;SIZECHECK;CASTCHECK
-
-# optionally you can provide a probabilistic model to modify the distribution it uses to pick the mutation operators
-#model=probabilistic
-#modelPath=/home/mausoto/probGenProg/genprog4java/overallModel.txt
-
-# use 1.0,0.1 for TrpAutoRepair and PAR. Use 0.65 and 0.35 for GenProg
-negativePathWeight=1.0
-positivePathWeight=0.1
-
-# trp for TrpAutoRepair, gp for GenProg and PAR 
-search=trp
-
-# used only for TrpAutoRepair. value=400
-maxVariants=400
-
-
-EOM
 
 #  get passing and failing tests as well as files
 #info about the bug

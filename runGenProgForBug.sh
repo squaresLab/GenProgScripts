@@ -26,25 +26,26 @@
 # 14th param is the path to file containing sampled positive tests"
 
 #Example of usage:
-#./runGenProgForBug.sh Math 2 allHuman 100 ExamplesCheckedOut 1 5 false /usr/lib/jvm/java-1.7.0-openjdk-amd64 /usr/lib/jvm/java-1.8.0-openjdk-amd64 false \"\" false \"\"
+#./runGenProgForBug.sh Math 2 allHuman 100 ExamplesCheckedOut gp 1 5 false /usr/lib/jvm/java-1.7.0-openjdk-amd64 /usr/lib/jvm/java-1.8.0-openjdk-amd64 false \"\" false \"\"
 
 
-if [ "$#" -lt 14 ]; then
-	echo "This script should be run with 14 parameters:"
+if [ "$#" -lt 15 ]; then
+	echo "This script should be run with 15 parameters:"
 	echo " 1st param is the project in upper case (ex: Lang, Chart, Closure, Math, Time)"
 	echo " 2nd param is the bug number (ex: 1,2,3,4,...)"
 	echo " 3th param is the option of running the test suite (ex: allHuman, oneHuman, oneGenerated)"
 	echo " 4th param is the test suite sample size (ex: 1, 100)"
 	echo " 5th param is the folder where the bug files will be cloned to. Starting from $D4J_HOME (Ex: ExamplesCheckedOut)"
-	echo " 6th param is the initial seed. It will then increase the seeds by adding 1 until it gets to the number in the next param."
-	echo " 7th param is the final seed."
-	echo " 8th param is on if the purpose is to test only fault loc and not really trying to find a patch. When it has reached the end of fault localization it will stop."
-	echo " 9th param is the folder where the java 7 instalation is located"
-	echo " 10th param is the folder where the java 8 instalation is located"
-        echo " 11th param is set to \"true\" if negative tests are to be specified using sampled tests else set this to \"false\""
-        echo " 12th param is the path to file containing sampled negative tests"
-        echo " 13th param is set to \"true\" if positive tests are to be specified using sampled tests else set this to \"false\""
-        echo " 14th param is the path to file containing sampled positive tests"
+	echo " 6th param is the repair approach to use (e.g., gp, trp, par, all)"
+	echo " 7th param is the initial seed. It will then increase the seeds by adding 1 until it gets to the number in the next param."
+	echo " 8th param is the final seed."
+	echo " 9th param is on if the purpose is to test only fault loc and not really trying to find a patch. When it has reached the end of fault localization it will stop."
+	echo " 10th param is the folder where the java 7 instalation is located"
+	echo " 11th param is the folder where the java 8 instalation is located"
+        echo " 12th param is set to \"true\" if negative tests are to be specified using sampled tests else set this to \"false\""
+        echo " 13th param is the path to file containing sampled negative tests"
+        echo " 14th param is set to \"true\" if positive tests are to be specified using sampled tests else set this to \"false\""
+        echo " 15th param is the path to file containing sampled positive tests"
 
 else
 
@@ -53,19 +54,20 @@ BUGNUMBER="$2"
 OPTION="$3"
 TESTSUITESAMPLE="$4"
 BUGSFOLDER="$5"
-STARTSEED="$6"
-UNTILSEED="$7"
-JUSTTESTINGFAULTLOC="$8"
+APPROACH="$6"
+STARTSEED="$7"
+UNTILSEED="$8"
+JUSTTESTINGFAULTLOC="$9"
 DIROFJAVA7="/usr/lib/jvm/java-1.7.0-openjdk-amd64"
 DIROFJAVA8="/usr/lib/jvm/java-1.8.0-openjdk-amd64"
-SAMPLENEGTESTS="${11}"
-NEGTESTPATH="${12}"
-SAMPLEPOSTESTS="${13}"
-POSTESTPATH="${14}"
+SAMPLENEGTESTS="${12}"
+NEGTESTPATH="${13}"
+SAMPLEPOSTESTS="${14}"
+POSTESTPATH="${15}"
 
-if [ "$#" -eq 14 ]; then
-  DIROFJAVA7="$9"
-  DIROFJAVA8="${10}"
+if [ "$#" -eq 15 ]; then
+  DIROFJAVA7="${10}"
+  DIROFJAVA8="${11}"
 fi
 
 if [ -z "$D4J_HOME" ]; then
