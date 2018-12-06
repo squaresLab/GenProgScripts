@@ -5,9 +5,10 @@ The purpose of this repo is to allow user to run GenProg in the Defects4J bugs
 Running this script on the Closure project doesn't work.
 
 # Instructions:
+
 Use runGenProgForBugExperimental.sh
 
-1st param is the project in upper case (ex: Lang, Chart, Closure, Math, Time)
+1st param is the project in upper case (ex: Lang, Chart, Closure (doesn't currently work), Math, Time)
 
 2nd param is the bug number (ex: 1,2,3,4,...)
 
@@ -21,7 +22,7 @@ Use runGenProgForBugExperimental.sh
 
 7th param is the final seed.
 
-8th param is on if the purpose is to test only fault loc and not really trying to find a patch. When it has reached the end of fault localization it will stop.
+8th param is \"true\" if the purpose is to test only fault loc and not really trying to find a patch. When it has reached the end of fault localization it will stop. Otherwise, set to \"false\".
 
 9th param is the folder where the java 7 instalation is located
 
@@ -39,4 +40,11 @@ Use runGenProgForBugExperimental.sh
 
 16th param is the timeout length for unit tests (in milliseconds)
 
-17th param is the mode of the invariant checker
+17th param: 
+- 0: don't incorporate invariant analysis into fitness.
+- 1: deprecated
+- 2: deprecated
+- 3: optimize only for invariant diversity
+- 4: use NSGA-II: optimize for test cases and invariant diversity.
+
+To use NSGA-II multiobjective search w/ invariant analysis: set the 17th parameter to the value 4.
