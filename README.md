@@ -20,6 +20,7 @@ The output is a folder created in the $D4J_HOME/5thParameter/1stParam2ndParam/ w
 * 3th param is the option of running the test suite (ex: allHuman, oneHuman, oneGenerated)
 * 4th param is the test suite sample size (ex: 1, 100)
 * 5th param is the folder where the bug files will be cloned to. Starting from $D4J_HOME (Ex: ExamplesCheckedOut)
+* 6th param is the repair approach (e.g., gp, trp, par, all)
 * 6th param is the initial seed. It will then increase the seeds by adding 1 until it gets to the number in the next param.
 * 7th param is the final seed.
 * 8th param is on if the purpose is to test only fault loc and not really trying to find a patch. When it has reached the end of fault localization it will stop.
@@ -32,4 +33,4 @@ The output is a folder created in the $D4J_HOME/5thParameter/1stParam2ndParam/ w
 
 ## Example of usage:
 
-./runGenProgForBug.sh Math 2 allHuman 100 ExamplesCheckedOut 1 5 false /usr/lib/jvm/java-1.7.0-openjdk-amd64 /usr/lib/jvm/java-1.8.0-openjdk-amd64 false a false a
+./runGenProgForBug.sh Math 2 allHuman 100 ExamplesCheckedOut gp 1 5 false /usr/lib/jvm/java-1.7.0-openjdk-amd64 /usr/lib/jvm/java-1.8.0-openjdk-amd64 false a false a
