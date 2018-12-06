@@ -41,6 +41,7 @@ Use runGenProgForBugExperimental.sh
 
 16th param is the timeout length for unit tests (in milliseconds)
 - We're using `3000` milliseconds
+
 17th param: 
 - 0: don't incorporate invariant analysis into fitness.
 - 1: deprecated
