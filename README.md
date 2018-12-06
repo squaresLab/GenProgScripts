@@ -33,4 +33,4 @@ The output is a folder created in the $D4J_HOME/5thParameter/1stParam2ndParam/ w
 
 ## Example of usage:
 
-./runGenProgForBug.sh Chart 13 allHuman 100 ExamplesCheckedOut gp 1 5 false /usr/lib/jvm/java-1.7.0-openjdk-amd64 /usr/lib/jvm/java-1.8.0-openjdk-amd64 false \"\" false \"\"
+./runGenProgForBug.sh Chart 13 allHuman 100 ExamplesCheckedOut gp 1 5 false /usr/lib/jvm/java-1.7.0-openjdk-amd64 /usr/lib/jvm/java-1.8.0-openjdk-amd64 false \\"\\" false \\"\\"
