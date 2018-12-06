@@ -37,7 +37,7 @@ Use runGenProgForBugExperimental.sh
 14th param is the path to file containing sampled positive tests"
 
 15th param is the path to the directory containing the class files of the tests relative to the path to the defects4j bug
-- For example, the relative path to test class files of Lang projects is `target/tests/`, the relative path for Math projects is `target/test-classes`
+- For example, the relative path to test class files of Lang projects is `target/tests/`, the relative path for Math projects is `target/test-classes/`
 
 16th param is the timeout length for unit tests (in milliseconds)
 - We're using `3000` milliseconds
