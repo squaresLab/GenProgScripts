@@ -162,7 +162,7 @@ negativeTests = $D4J_HOME/$BUGSFOLDER/$LOWERCASEPACKAGE$2Buggy/neg.tests
 positiveTestClassesDaikonSample = $D4J_HOME/$BUGSFOLDER/$LOWERCASEPACKAGE$2Buggy/$MODIFIEDCLASSESLIST
 pathToNoTimeoutTests = $DAIKONTESTS
 jacocoPath = $GP4J_HOME/lib/jacocoagent.jar
-testClassPath=$TESTCP
+testClassPath=$TESTCP:$GP4J_HOME/lib/junit-4.12.jar:$GP4J_HOME/lib/hamcrest-core-1.3.jar:$GP4J_HOME/lib/junittestrunner.jar
 srcClassPath=$COMPILECP
 compileCommand = $D4J_HOME/$BUGSFOLDER/$LOWERCASEPACKAGE$2Buggy/runCompile.sh
 targetClassName = $BUGWD/bugfiles.txt
@@ -269,4 +269,4 @@ echo $D4J_HOME/$BUGSFOLDER/$LOWERCASEPACKAGE$2Buggy/$WD
 echo "compiling positive tests w/o timeouts for Daikon"
 cd $DAIKONTESTS
 find . -name "*.java" > sources.txt
-javac -classpath ".:$BUGWD/$WD:$TESTCP:$GP4J_HOME/target/classes" @sources.txt
+javac -classpath ".:$BUGWD/$WD:$TESTCP:$GP4J_HOME/target/classes:$GP4J_HOME/lib/junit-4.12.jar" @sources.txt
