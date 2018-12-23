@@ -167,6 +167,7 @@ srcClassPath=$COMPILECP
 compileCommand = $D4J_HOME/$BUGSFOLDER/$LOWERCASEPACKAGE$2Buggy/runCompile.sh
 targetClassName = $BUGWD/bugfiles.txt
 invariantCheckerMode = $INVCHKMODE
+crossp=1.0
 
 # 0.1 for GenProg and 1.0 for TrpAutoRepair and PAR
 sample=0.1
