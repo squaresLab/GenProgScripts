@@ -48,3 +48,13 @@ Use runGenProgForBugExperimental.sh
 - 2: deprecated
 - 3: optimize only for invariant diversity
 - 4: use NSGA-II: optimize for test cases and invariant diversity.
+
+# Test set:
+
+We constructed our test set by stratifying the set of bugs into three categories: 
+- bugs with only one repair action (as defined by Sobreira et. al's dissection of defects4j)
+- bugs with more than one repair action and only one failing test case
+- bugs with more than one repair action and more than one failing test case.
+
+For all three categories, 
+we sample three bugs from each of the six projects in defects4j, forming a test set of 54 total bugs.
