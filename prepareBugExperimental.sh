@@ -148,7 +148,7 @@ FILE=$D4J_HOME/$BUGSFOLDER/$LOWERCASEPACKAGE$2Buggy/defects4j.config
 /bin/cat <<EOM >$FILE
 seed = 0
 sanity = yes
-popsize = 20
+popsize = 40
 generations = 10
 javaVM = $DIROFJAVA7/jre/bin/java
 workingDir = $D4J_HOME/$BUGSFOLDER/$LOWERCASEPACKAGE$2Buggy/
