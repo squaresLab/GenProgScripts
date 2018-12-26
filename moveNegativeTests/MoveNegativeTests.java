@@ -159,8 +159,10 @@ public class MoveNegativeTests
     //classDecNew.setImplementedTypes(classDecOrig.getImplementedTypes());
 
     //if the original class inherits TestCase, the new class will also inherit TestCase
-    if(extendsTestCase(classDecOrig))
+    if(extendsTestCase(classDecOrig)){
       classDecNew.addExtendedType("TestCase");
+      newCU.addImport("junit.framework.TestCase");
+    }
 
     //search for methods to move
     NodeList<BodyDeclaration<?>> membersOfOrigClass = classDecOrig.getMembers();
