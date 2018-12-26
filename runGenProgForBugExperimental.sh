@@ -97,9 +97,8 @@ BASEDIR=$PWD
 
 #Compile Genprog and put the class files in /bin
 #Go to the GenProg folder
-echo "right before compiling gp4j"
 if [ -d "$GP4J_HOME" ]; then
-	echo "compiling gp4j"
+	echo "NOT compiling gp4j"
   cd "$GP4J_HOME"
   #mvn package
   if [[ $? -ne 0 ]]; then
