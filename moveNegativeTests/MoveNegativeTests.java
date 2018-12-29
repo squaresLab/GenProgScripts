@@ -198,7 +198,7 @@ public class MoveNegativeTests
           methodsToRemove.add(method);
         }
         //check to see if this method is a potential helper method (non-test method)
-        else if(!isTestCase(method))
+        else if((!isTestCase(method))&&(!method.getName().asString().equals("suite")) && (!method.getName().asString().equals("main")) )
         {
           MethodDeclaration methodCopy = method.clone();
           classDecNew.addMember(methodCopy);
