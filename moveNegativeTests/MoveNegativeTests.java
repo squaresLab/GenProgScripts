@@ -163,6 +163,12 @@ public class MoveNegativeTests
       classDecNew.addExtendedType("TestCase");
       newCU.addImport("junit.framework.TestCase");
     }
+    else if(extendsTestBase(classDecOrig))
+    {
+      //only for Mockito
+      classDecNew.addExtendedType("TestBase");
+      newCU.addImport("org.mockitoutil.TestBase");
+    }
 
     //search for methods to move
     NodeList<BodyDeclaration<?>> membersOfOrigClass = classDecOrig.getMembers();
@@ -319,6 +325,16 @@ public class MoveNegativeTests
     for(ClassOrInterfaceType extendedClass : c.getExtendedTypes())
     {
       if(extendedClass.getName().asString().equals("TestCase"))
+        return true;
+    }
+    return false;
+  }
+
+  private static boolean extendsTestBase(ClassOrInterfaceDeclaration c)
+  {
+    for(ClassOrInterfaceType extendedClass : c.getExtendedTypes())
+    {
+      if(extendedClass.getName().asString().equals("TestBase"))
         return true;
     }
     return false;
