@@ -115,7 +115,7 @@ if [ -d "$GP4J_HOME" ]; then
 
 	DAIKONTESTS=$BUGWD/"daikonTests"
 	if [ ! -f $BUGWD/defects4j.config ]; then
-			rm -r $BUGWD/* 
+			rm -r $BUGWD/*
 			./prepareBugExperimental.sh $PROJECT $BUGNUMBER $OPTION $TESTSUITESAMPLE $BUGSFOLDER $DIROFJAVA7 $DIROFJAVA8 $SAMPLENEGTESTS $NEGTESTPATH $SAMPLEPOSTESTS $POSTESTPATH $TESTFOLDER $TIMEOUT $DAIKONTESTS $INVCHKMODE
 	else
 			echo "Not running prepareBugExperimental.sh"
@@ -152,7 +152,7 @@ if [ -d "$GP4J_HOME" ]; then
   	export PATH=$DIROFJAVA8/bin/:$PATH
 	#sudo update-java-alternatives -s $DIROFJAVA8
 
-	JAVALOCATION=$(which java)
+	JAVALOCATION=$DIROFJAVA8/bin/java
 	$JAVALOCATION -ea -Dlog4j.configurationFile=file:"$GP4J_HOME"/src/log4j.properties -Dfile.encoding=UTF-8 -classpath "$GP4J_HOME"/target/uber-GenProg4Java-0.0.1-SNAPSHOT.jar clegoues.genprog4java.main.Main $GP4J_HOME $DIROFJAVA8 $DAIKONDIR $D4J_HOME/$BUGSFOLDER/"$LOWERCASEPACKAGE""$BUGNUMBER"Buggy/defects4j.config | tee $D4J_HOME/$BUGSFOLDER/"$LOWERCASEPACKAGE""$BUGNUMBER"Buggy/log"$PROJECT""$BUGNUMBER"Seed$seed.txt
 
 
