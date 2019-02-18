@@ -93,7 +93,7 @@ PREVLOCATION=$(pwd)
   #echo "This is TESTWD: "
 
 cd $BASEDIR/moveNegativeTests
-bash moveNegativeTests.sh $BUGWD $BUGWD/neg.tests $BUGWD/$MODIFIEDCLASSESLIST javaparser_javaparser-core_target_classes $TIMEOUT $DAIKONTESTS
+bash moveNegativeTests.sh $BUGWD $BUGWD/neg.tests $BUGWD/$MODIFIEDCLASSESLIST javaparser_javaparser-core_target_classes $TIMEOUT $DAIKONTESTS $DIROFJAVA8
 cd $PREVLOCATION
 
 #Compile the both buggy and fixed code
