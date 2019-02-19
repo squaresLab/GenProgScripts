@@ -58,6 +58,9 @@ Use runGenProgForBugExperimental.sh
 - 3: optimize only for invariant diversity
 - 4: use NSGA-II: optimize for test cases and invariant diversity.
 
+# Example usage: 
+`bash runGenProgForBugExperimental.sh Math 86 allHuman 20 BuggyGP4J4 0 0 false /Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home /Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home false '""' false '""' target/test-classes/ 300000 4`
+
 # Test set:
 
 We constructed our test set by stratifying the set of bugs into three categories: 
