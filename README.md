@@ -1,6 +1,12 @@
 # GenProgScripts
 The purpose of this repo is to allow user to run GenProg in the Defects4J bugs
 
+## Preconditions:
+
+* The variable D4J_HOME should be directed to the folder where defects4j is installed.
+* The variable GP4J_HOME should be directed to the folder where genprog4java is installed.
+* The variable DAIKONDIR should be directed to the folder where daikon is installed.
+
 # Instructions:
 
 Use runGenProgForBugExperimental.sh
