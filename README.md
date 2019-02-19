@@ -1,9 +1,6 @@
 # GenProgScripts
 The purpose of this repo is to allow user to run GenProg in the Defects4J bugs
 
-# Known problems: 
-Running this script on the Closure project doesn't work.
-
 # Instructions:
 
 Use runGenProgForBugExperimental.sh
