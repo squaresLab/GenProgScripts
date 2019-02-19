@@ -1,6 +1,12 @@
 # GenProgScripts
 The purpose of this repo is to allow user to run GenProg in the Defects4J bugs
 
+Tested with the following configuration:
+* macOS Mojave 10.14.2
+* Java SE 7u80 + 8u45
+* Defects4J 1.4.0, commit fcf6b9b (Jan. 19, 2019)
+* Daikon 5.7.2
+* GenProg4Java+Invariants, commit 8182bc8 (Feb. 19, 2019). https://github.com/squaresLab/genprog4java/tree/Yiwei-Lyu-mini-proj
 ## Preconditions:
 
 * The variable D4J_HOME should be directed to the folder where defects4j is installed.
