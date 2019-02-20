@@ -52,7 +52,7 @@ Use runGenProgForBugExperimental.sh
 - We're using `3000` milliseconds
 
 17th param is the repair approach: 
-- 0: don't incorporate invariant analysis into fitness.
+- 0: don't incorporate invariant analysis into fitness, but collect invariant diversity & fitness granularity (anti-plateau score) information anyways.
 - 1: deprecated
 - 2: deprecated
 - 3: optimize only for invariant diversity
