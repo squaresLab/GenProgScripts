@@ -187,7 +187,7 @@ negativePathWeight=0.65
 positivePathWeight=0.35
 
 # trp for TrpAutoRepair, gp for GenProg and PAR
-#search=trp
+search=trp
 
 # used only for TrpAutoRepair. value=400
 maxVariants=400
