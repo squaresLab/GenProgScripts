@@ -60,13 +60,3 @@ Use runGenProgForBugExperimental.sh
 
 # Example usage: 
 `bash runGenProgForBugExperimental.sh Math 86 allHuman 20 BuggyGP4J4 0 0 false /Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home /Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home false '""' false '""' target/test-classes/ 300000 4`
-
-# Test set:
-
-We constructed our test set by stratifying the set of bugs into three categories: 
-- bugs with only one repair action (as defined by Sobreira et. al's dissection of defects4j)
-- bugs with more than one repair action and only one failing test case
-- bugs with more than one repair action and more than one failing test case.
-
-For all three categories, 
-we sample three bugs from each of the six projects in defects4j, forming a test set of 54 total bugs.
