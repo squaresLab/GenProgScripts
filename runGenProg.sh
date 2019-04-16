@@ -1,3 +1,7 @@
+#1st param: project name (Math, Lang, ...)
+#2nd param: bug number
+#3rd param: mode
+
 P1=$1
 P2=$2
 P3=allHuman
