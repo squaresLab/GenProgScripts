@@ -33,7 +33,7 @@ if [ "$#" -ne 15 ]; then
 	echo "9th param is the path to file containing sampled negative tests"
 	echo "10th param is set to \"true\" if positive tests are to be specified using sampled tests else set this to \"false\""
 	echo "11th param is the path to file containing sampled positive tests"
-	echo "12th param is the path to the directory containing the class files of the tests relative to the path to the defects4j bug"
+	echo "12th param is deprecated, type in anything; will be removed when Zhen has more time to do a more careful refactor"
   echo "13th param is the timeout length for unit tests (in milliseconds)"
   echo "14th param is the name of the directory that will contain tests for Daikon to learn invariants on (will be created if required)"
   echo "15th param is the mode of the invariant checker"
@@ -51,7 +51,7 @@ SAMPLENEGTESTS="$8"
 NEGTESTPATH="$9"
 SAMPLEPOSTESTS="${10}"
 POSTESTPATH="${11}"
-TESTFOLDER="${12}"
+TESTFOLDER="${12}" #deprecated
 TIMEOUT="${13}"
 DAIKONTESTS="${14}"
 INVCHKMODE="${15}"
@@ -89,6 +89,7 @@ PREVLOCATION=$(pwd)
 
   cd $D4J_HOME/$BUGSFOLDER/$LOWERCASEPACKAGE$2Buggy/
   TESTWD=`defects4j export -p dir.src.tests`
+  TESTFOLDER=`defects4j export -p dir.bin.tests`
   rsync -r $TESTWD/ $DAIKONTESTS
   #echo "This is TESTWD: "
 
