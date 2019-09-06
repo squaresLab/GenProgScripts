@@ -54,7 +54,7 @@
 #         the path to file containing sampled positive tests
 
 # Example of usage:
-# 		./runGenProgForBug.sh Math:2 --option=allHuman --bugsfolder=ExamplesCheckedOut --startseed=10 --untilseed=15
+#     ./runGenProgForBug.sh Math:2 --option=allHuman --bugsfolder=ExamplesCheckedOut --startseed=10 --untilseed=15
 
 source gpConfig.sh
 
@@ -76,73 +76,73 @@ for i in "$@"
 do
 case $i in
 
-	--help)
+  --help)
     cat help.txt
     exit 0
     ;;
-	--option=*)
+  --option=*)
     OPTION="${i#*=}"
     shift # past argument=value
     ;;
-	--testsuitesample=*)
+  --testsuitesample=*)
     TESTSUITESAMPLE="${i#*=}"
     shift # past argument=value
     ;;
-	--bugsfolder=*)
+  --bugsfolder=*)
     BUGSFOLDER="${i#*=}"
     shift # past argument=value
     ;;
-	--approach=*)
+  --approach=*)
     APPROACH="${i#*=}"
     shift # past argument=value
     ;;
-	--startseed=*)
+  --startseed=*)
     STARTSEED="${i#*=}"
     shift # past argument=value
     ;;
-	--untilseed=*)
+  --untilseed=*)
     UNTILSEED="${i#*=}"
     shift # past argument=value
     ;;
-	--justtestingfaultloc=*)
+  --justtestingfaultloc=*)
     JUSTTESTINGFAULTLOC="${i#*=}"
     shift # past argument=value
     ;;
-	--dirofjava7=*)
+  --dirofjava7=*)
     DIROFJAVA7="${i#*=}"
     shift # past argument=value
     ;;
-	--dirofjava8=*)
+  --dirofjava8=*)
     DIROFJAVA8="${i#*=}"
     shift # past argument=value
     ;;
-	--samplenegtests=*)
+  --samplenegtests=*)
     SAMPLENEGTESTS="${i#*=}"
     shift # past argument=value
     ;;
-	--negtestpath=*)
+  --negtestpath=*)
     NEGTESTPATH="${i#*=}"
     shift # past argument=value
     ;;
-	--samplepostests=*)
+  --samplepostests=*)
     SAMPLEPOSTESTS="${i#*=}"
     shift # past argument=value
     ;;
-	--postestpath=*)
+  --postestpath=*)
     POSTESTPATH="${i#*=}"
     shift # past argument=value
     ;;
-	*)    # unlabelled option, assumed to be project:bugnumber
+  *)    # unlabelled option, assumed to be project:bugnumber
     PROJECT="${i%:*}"
-		BUGNUMBER="${i#*:}"
+    BUGNUMBER="${i#*:}"
     shift
     ;;
 esac
 done
 
 if [ -z "$PROJECT" ] || [ -z "BUGNUMBER" ]; then
-	echo "Need to have PROJECT:BUGNUMBER as an argument"
-	exit 1
+  echo "Need to have PROJECT:BUGNUMBER as an argument"
+  exit 1
 fi
 if [ -z "$D4J_HOME" ]; then
     echo "Need to set D4J_HOME"
@@ -192,42 +192,42 @@ if [ -d "$GP4J_HOME" ]; then
     cd $BUGWD/$WD
 
     for (( seed=$STARTSEED; seed<=$UNTILSEED; seed++ ))
-      do	
-			echo "RUNNING THE BUG: $PROJECT $BUGNUMBER, WITH THE SEED: $seed"
+      do  
+      echo "RUNNING THE BUG: $PROJECT $BUGNUMBER, WITH THE SEED: $seed"
 
-			#Running until fault loc only
-			if [ $JUSTTESTINGFAULTLOC == "true" ]; then
-			  echo "justTestingFaultLoc = true" >> $D4J_HOME/$BUGSFOLDER/"$LOWERCASEPACKAGE""$BUGNUMBER"Buggy/defects4j.config
-			fi
+      #Running until fault loc only
+      if [ $JUSTTESTINGFAULTLOC == "true" ]; then
+        echo "justTestingFaultLoc = true" >> $D4J_HOME/$BUGSFOLDER/"$LOWERCASEPACKAGE""$BUGNUMBER"Buggy/defects4j.config
+      fi
 
-			#Changing the seed
-			CHANGESEEDCOMMAND="sed -i '1s/.*/seed = $seed/' "$D4J_HOME/$BUGSFOLDER/"$LOWERCASEPACKAGE""$BUGNUMBER"Buggy/defects4j.config
-			eval $CHANGESEEDCOMMAND
+      #Changing the seed
+      CHANGESEEDCOMMAND="sed -i '1s/.*/seed = $seed/' "$D4J_HOME/$BUGSFOLDER/"$LOWERCASEPACKAGE""$BUGNUMBER"Buggy/defects4j.config
+      eval $CHANGESEEDCOMMAND
 
-			if [ $seed != $STARTSEED ]; then
-			  REMOVESANITYCOMMAND="sed -i 's/sanity = yes/sanity = no/' "$D4J_HOME/$BUGSFOLDER/"$LOWERCASEPACKAGE""$BUGNUMBER"Buggy/defects4j.config
-			  eval $REMOVESANITYCOMMAND
+      if [ $seed != $STARTSEED ]; then
+        REMOVESANITYCOMMAND="sed -i 's/sanity = yes/sanity = no/' "$D4J_HOME/$BUGSFOLDER/"$LOWERCASEPACKAGE""$BUGNUMBER"Buggy/defects4j.config
+        eval $REMOVESANITYCOMMAND
 
-			  REMOVEREGENPATHS="sed -i '/regenPaths/d' "$D4J_HOME/$BUGSFOLDER/"$LOWERCASEPACKAGE""$BUGNUMBER"Buggy/defects4j.config
-			  eval $REMOVEREGENPATHS
-			fi
-		    
-			export JAVA_HOME=$DIROFJAVA8
-			export JRE_HOME=$DIROFJAVA8/jre
-		  	export PATH=$DIROFJAVA8/bin/:$PATH
-			#sudo update-java-alternatives -s $DIROFJAVA8
+        REMOVEREGENPATHS="sed -i '/regenPaths/d' "$D4J_HOME/$BUGSFOLDER/"$LOWERCASEPACKAGE""$BUGNUMBER"Buggy/defects4j.config
+        eval $REMOVEREGENPATHS
+      fi
+        
+      export JAVA_HOME=$DIROFJAVA8
+      export JRE_HOME=$DIROFJAVA8/jre
+        export PATH=$DIROFJAVA8/bin/:$PATH
+      #sudo update-java-alternatives -s $DIROFJAVA8
 
-			JAVALOCATION=$(which java)
-			timeout -sHUP 4h $JAVALOCATION -ea -Dlog4j.configurationFile=file:"$GP4J_HOME"/src/log4j.properties -Dfile.encoding=UTF-8 -classpath "$GP4J_HOME"/target/uber-GenProg4Java-0.0.1-SNAPSHOT.jar clegoues.genprog4java.main.Main $D4J_HOME/$BUGSFOLDER/"$LOWERCASEPACKAGE""$BUGNUMBER"Buggy/defects4j.config | tee $D4J_HOME/$BUGSFOLDER/"$LOWERCASEPACKAGE""$BUGNUMBER"Buggy/log"$PROJECT""$BUGNUMBER"Seed$seed.txt
+      JAVALOCATION=$(which java)
+      timeout -sHUP 4h $JAVALOCATION -ea -Dlog4j.configurationFile=file:"$GP4J_HOME"/src/log4j.properties -Dfile.encoding=UTF-8 -classpath "$GP4J_HOME"/target/uber-GenProg4Java-0.0.1-SNAPSHOT.jar clegoues.genprog4java.main.Main $D4J_HOME/$BUGSFOLDER/"$LOWERCASEPACKAGE""$BUGNUMBER"Buggy/defects4j.config | tee $D4J_HOME/$BUGSFOLDER/"$LOWERCASEPACKAGE""$BUGNUMBER"Buggy/log"$PROJECT""$BUGNUMBER"Seed$seed.txt
 
 
-			#Save the variants in a tar file
-			tar -cvf $D4J_HOME/$BUGSFOLDER/"$LOWERCASEPACKAGE""$BUGNUMBER"Buggy/variants"$PROJECT""$BUGNUMBER"Seed$seed.tar $D4J_HOME/$BUGSFOLDER/"$LOWERCASEPACKAGE""$BUGNUMBER"Buggy/tmp/
-			mv $D4J_HOME/$BUGSFOLDER/"$LOWERCASEPACKAGE""$BUGNUMBER"Buggy/tmp/original/ $D4J_HOME/$BUGSFOLDER/"$LOWERCASEPACKAGE""$BUGNUMBER"Buggy/
-			rm -r $D4J_HOME/$BUGSFOLDER/"$LOWERCASEPACKAGE""$BUGNUMBER"Buggy/tmp/
-			mkdir $D4J_HOME/$BUGSFOLDER/"$LOWERCASEPACKAGE""$BUGNUMBER"Buggy/tmp/
-			mv $D4J_HOME/$BUGSFOLDER/"$LOWERCASEPACKAGE""$BUGNUMBER"Buggy/original/ $D4J_HOME/$BUGSFOLDER/"$LOWERCASEPACKAGE""$BUGNUMBER"Buggy/tmp/
-			
+      #Save the variants in a tar file
+      tar -cvf $D4J_HOME/$BUGSFOLDER/"$LOWERCASEPACKAGE""$BUGNUMBER"Buggy/variants"$PROJECT""$BUGNUMBER"Seed$seed.tar $D4J_HOME/$BUGSFOLDER/"$LOWERCASEPACKAGE""$BUGNUMBER"Buggy/tmp/
+      mv $D4J_HOME/$BUGSFOLDER/"$LOWERCASEPACKAGE""$BUGNUMBER"Buggy/tmp/original/ $D4J_HOME/$BUGSFOLDER/"$LOWERCASEPACKAGE""$BUGNUMBER"Buggy/
+      rm -r $D4J_HOME/$BUGSFOLDER/"$LOWERCASEPACKAGE""$BUGNUMBER"Buggy/tmp/
+      mkdir $D4J_HOME/$BUGSFOLDER/"$LOWERCASEPACKAGE""$BUGNUMBER"Buggy/tmp/
+      mv $D4J_HOME/$BUGSFOLDER/"$LOWERCASEPACKAGE""$BUGNUMBER"Buggy/original/ $D4J_HOME/$BUGSFOLDER/"$LOWERCASEPACKAGE""$BUGNUMBER"Buggy/tmp/
+      
       done
     fi
-	fi
+  fi
