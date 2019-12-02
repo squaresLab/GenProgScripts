@@ -52,7 +52,7 @@ if [ "$APPROACH" = "gp" ]; then
 FILE=$D4J_HOME/$BUGSFOLDER/$LOWERCASEPACKAGE$2Buggy/defects4j.config
 /bin/cat <<EOM >$FILE
 seed = 0
-sanity = yes
+sanity = no
 popsize = 40
 javaVM = $DIROFJAVA7/jre/bin/java
 workingDir = $D4J_HOME/$BUGSFOLDER/$LOWERCASEPACKAGE$2Buggy/
@@ -87,6 +87,11 @@ positivePathWeight=0.35
 # trp for TrpAutoRepair, gp for GenProg and PAR 
 search=gp
 
+fakeJunitDir = /home/ylyu1/Fake-JUnit
+GP4J_HOME = /home/ylyu1/genprog/genprog4java/
+skipFailedSanity = true
+
+
 EOM
 
 fi
@@ -96,7 +101,7 @@ if [ "$APPROACH" = "trp" ]; then
 FILE=$D4J_HOME/$BUGSFOLDER/$LOWERCASEPACKAGE$2Buggy/defects4j.config
 /bin/cat <<EOM >$FILE
 seed = 0
-sanity = yes
+sanity = no
 popsize = 40
 javaVM = $DIROFJAVA7/jre/bin/java
 workingDir = $D4J_HOME/$BUGSFOLDER/$LOWERCASEPACKAGE$2Buggy/
@@ -134,6 +139,7 @@ search=trp
 # used only for TrpAutoRepair. value=400
 maxVariants=400
 
+
 EOM
 
 fi
@@ -143,7 +149,7 @@ if [ "$APPROACH" = "par" ]; then
 FILE=$D4J_HOME/$BUGSFOLDER/$LOWERCASEPACKAGE$2Buggy/defects4j.config
 /bin/cat <<EOM >$FILE
 seed = 0
-sanity = yes
+sanity = no
 popsize = 40
 javaVM = $DIROFJAVA7/jre/bin/java
 workingDir = $D4J_HOME/$BUGSFOLDER/$LOWERCASEPACKAGE$2Buggy/
@@ -189,7 +195,7 @@ if [ "$APPROACH" = "all" ]; then
 FILE=$D4J_HOME/$BUGSFOLDER/$LOWERCASEPACKAGE$2Buggy/defects4j.config
 /bin/cat <<EOM >$FILE
 seed = 0
-sanity = yes
+sanity = no
 popsize = 40
 javaVM = $DIROFJAVA7/jre/bin/java
 workingDir = $D4J_HOME/$BUGSFOLDER/$LOWERCASEPACKAGE$2Buggy/
@@ -223,6 +229,10 @@ positivePathWeight=0.35
 
 # trp for TrpAutoRepair, gp for GenProg and PAR 
 search=gp
+
+fakeJunitDir = /home/ylyu1/Fake-JUnit
+GP4J_HOME = /home/ylyu1/genprog/genprog4java/
+skipFailedSanity = true
 
 EOM
 

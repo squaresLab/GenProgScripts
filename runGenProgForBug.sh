@@ -98,7 +98,7 @@ export PATH=$DIROFJAVA8/bin/:$PATH
 #Go to the GenProg folder
 if [ -d "$GP4J_HOME" ]; then
   cd "$GP4J_HOME"
-  mvn package
+  #mvn package
   if [[ $? -ne 0 ]]; then
       echo "error building GenProg; exiting"
       exit 1
@@ -144,7 +144,7 @@ if [ -d "$GP4J_HOME" ]; then
 	#sudo update-java-alternatives -s $DIROFJAVA8
 
 	JAVALOCATION=$(which java)
-	timeout -sHUP 4h $JAVALOCATION -ea -Dlog4j.configurationFile=file:"$GP4J_HOME"/src/log4j.properties -Dfile.encoding=UTF-8 -classpath "$GP4J_HOME"/target/uber-GenProg4Java-0.0.1-SNAPSHOT.jar clegoues.genprog4java.main.Main $D4J_HOME/$BUGSFOLDER/"$LOWERCASEPACKAGE""$BUGNUMBER"Buggy/defects4j.config | tee $D4J_HOME/$BUGSFOLDER/"$LOWERCASEPACKAGE""$BUGNUMBER"Buggy/log"$PROJECT""$BUGNUMBER"Seed$seed.txt
+	timeout -sHUP 200h $JAVALOCATION -ea -Dlog4j.configurationFile=file:"$GP4J_HOME"/src/log4j.properties -Dfile.encoding=UTF-8 -classpath "$GP4J_HOME"/target/uber-GenProg4Java-0.0.1-SNAPSHOT.jar clegoues.genprog4java.main.Main $D4J_HOME/$BUGSFOLDER/"$LOWERCASEPACKAGE""$BUGNUMBER"Buggy/defects4j.config | tee $D4J_HOME/$BUGSFOLDER/"$LOWERCASEPACKAGE""$BUGNUMBER"Buggy/log"$PROJECT""$BUGNUMBER"Seed$seed.txt
 
 
 	#Save the variants in a tar file
