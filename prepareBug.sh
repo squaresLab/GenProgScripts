@@ -21,7 +21,7 @@
 # Example usage, VM:
 #./prepareBug.sh Math 2 allHuman 100 ExamplesCheckedOut gp /usr/lib/jvm/java-7-oracle/ /usr/lib/jvm/java-8-oracle/ true <path to neg.test> true <path to pos.test>
 
-if [ "$#" -ne 12 ]; then
+if [ "$#" -ne 13 ]; then
     echo "This script should be run with 12 parameters:"
 	echo "1st param: project name, sentence case (ex: Lang, Chart, Closure, Math, Time)"
 	echo "2nd param: bug number (ex: 1,2,3,4,...)"
@@ -50,7 +50,8 @@ SAMPLENEGTESTS="$9"
 NEGTESTPATH="${10}"
 SAMPLEPOSTESTS="${11}"
 POSTESTPATH="${12}"
-
+ASSERTMODE="${13}"
+echo $ASSERTMODE
 #Add the path of defects4j so the defects4j's commands run 
 export PATH=$PATH:"$D4J_HOME"/framework/bin/
 export PATH=$PATH:"$D4J_HOME"/framework/util/
@@ -114,7 +115,7 @@ chmod 777 $D4J_HOME/$BUGSFOLDER/$LOWERCASEPACKAGE$2Buggy/runCompile.sh
 
 cd $currentDir
 
-./createConfigFile.sh $LOWERCASEPACKAGE $BUGNUMBER $BUGSFOLDER $APPROACH $DIROFJAVA7 $SRCFOLDER $CONFIGLIBS $WD $TESTCP $COMPILECP
+./createConfigFile.sh $LOWERCASEPACKAGE $BUGNUMBER $BUGSFOLDER $APPROACH $DIROFJAVA7 $SRCFOLDER $CONFIGLIBS $WD $TESTCP $COMPILECP $ASSERTMODE
 
 cd $BUGWD
 

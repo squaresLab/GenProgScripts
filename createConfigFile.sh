@@ -13,7 +13,7 @@
 # Example usage, VM:
 #./createConfigFile.sh 
 
-if [ "$#" -ne 10 ]; then
+if [ "$#" -ne 11 ]; then
     echo "This script should be run with 11 parameters:"
 	echo "1st param: LOWERCASEPACKAGE, sentence case (ex: lang, chart, closure, math, time)"
 	echo "2nd param: BUGNUMBER (ex: 1,2,3,4,...)"
@@ -28,7 +28,6 @@ if [ "$#" -ne 10 ]; then
 	exit 0
 fi
 
-
 LOWERCASEPACKAGE="$1"
 BUGNUMBER="$2"
 BUGSFOLDER="$3"
@@ -37,8 +36,9 @@ DIROFJAVA7="$5"
 SRCFOLDER="$6"
 CONFIGLIBS="$7"
 WD="$8"
-TESTCP="$9"
+TESTCP="$9":$GP4J_HOME/lib/junit-4.12.jar:$GP4J_HOME/lib/hamcrest-core-1.3.jar
 COMPILECP="${10}"
+MODE="${11}"
 BUGWD=$D4J_HOME/$BUGSFOLDER"/"$LOWERCASEPACKAGE"$BUGNUMBER"Buggy
 
 #Add the path of defects4j so the defects4j's commands run 
@@ -87,6 +87,10 @@ positivePathWeight=0.35
 # trp for TrpAutoRepair, gp for GenProg and PAR 
 search=gp
 
+fakeJunitDir=/home/ylyu1/MultiEdit_Experiments/AssertExperiment/Fake-JUnit
+ASSERT_MODE=$MODE
+GP4J_HOME=/home/ylyu1/genprog/genprog4java
+skipFailedSanity = true
 EOM
 
 fi
@@ -134,6 +138,10 @@ search=trp
 # used only for TrpAutoRepair. value=400
 maxVariants=400
 
+fakeJunitDir=/home/ylyu1/MultiEdit_Experiments/AssertExperiment/Fake-JUnit
+ASSERT_MODE=$MODE
+GP4J_HOME=/home/ylyu1/genprog/genprog4java
+skipFailedSanity = true
 EOM
 
 fi
@@ -178,6 +186,10 @@ positivePathWeight=0.1
 # trp for TrpAutoRepair, gp for GenProg and PAR 
 search=gp
 
+fakeJunitDir=/home/ylyu1/MultiEdit_Experiments/AssertExperiment/Fake-JUnit
+ASSERT_MODE=$MODE
+GP4J_HOME=/home/ylyu1/genprog/genprog4java
+skipFailedSanity = true
 EOM
 
 fi
@@ -224,6 +236,10 @@ positivePathWeight=0.35
 # trp for TrpAutoRepair, gp for GenProg and PAR 
 search=gp
 
+fakeJUnitDir=/home/ylyu1/MultiEdit_Experiments/AssertExperiment/Fake-JUnit
+ASSERT_MODE=$MODE
+GP4J_HOME=/home/ylyu1/genprog/genprog4java
+skipFailedSanity = true
 EOM
 
 fi

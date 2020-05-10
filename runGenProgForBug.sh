@@ -29,7 +29,7 @@
 #./runGenProgForBug.sh Math 2 allHuman 100 ExamplesCheckedOut gp 1 5 false /usr/lib/jvm/java-1.7.0-openjdk-amd64 /usr/lib/jvm/java-1.8.0-openjdk-amd64 false \"\" false \"\"
 
 
-if [ "$#" -lt 15 ]; then
+if [ "$#" -lt 16 ]; then
 	echo "This script should be run with 15 parameters:"
 	echo " 1st param is the project in upper case (ex: Lang, Chart, Closure, Math, Time)"
 	echo " 2nd param is the bug number (ex: 1,2,3,4,...)"
@@ -64,8 +64,9 @@ SAMPLENEGTESTS="${12}"
 NEGTESTPATH="${13}"
 SAMPLEPOSTESTS="${14}"
 POSTESTPATH="${15}"
+ASSERTMODE="${16}"
 
-if [ "$#" -eq 15 ]; then
+if [ "$#" -eq 16 ]; then
   DIROFJAVA7="${10}"
   DIROFJAVA8="${11}"
 fi
@@ -98,7 +99,7 @@ export PATH=$DIROFJAVA8/bin/:$PATH
 #Go to the GenProg folder
 if [ -d "$GP4J_HOME" ]; then
   cd "$GP4J_HOME"
-  mvn package
+  #mvn package
   if [[ $? -ne 0 ]]; then
       echo "error building GenProg; exiting"
       exit 1
@@ -111,7 +112,7 @@ if [ -d "$GP4J_HOME" ]; then
 
     cd $currentDir
 
-    ./prepareBug.sh $PROJECT $BUGNUMBER $OPTION $TESTSUITESAMPLE $BUGSFOLDER $APPROACH $DIROFJAVA7 $DIROFJAVA8 $SAMPLENEGTESTS $NEGTESTPATH $SAMPLEPOSTESTS $POSTESTPATH
+    ./prepareBug.sh $PROJECT $BUGNUMBER $OPTION $TESTSUITESAMPLE $BUGSFOLDER $APPROACH $DIROFJAVA7 $DIROFJAVA8 $SAMPLENEGTESTS $NEGTESTPATH $SAMPLEPOSTESTS $POSTESTPATH $ASSERTMODE
 
     if [ -d "$BUGWD/$WD" ]; then
       #Go to the working directory
@@ -144,8 +145,7 @@ if [ -d "$GP4J_HOME" ]; then
 	#sudo update-java-alternatives -s $DIROFJAVA8
 
 	JAVALOCATION=$(which java)
-	timeout -sHUP 4h $JAVALOCATION -ea -Dlog4j.configurationFile=file:"$GP4J_HOME"/src/log4j.properties -Dfile.encoding=UTF-8 -classpath "$GP4J_HOME"/target/uber-GenProg4Java-0.0.1-SNAPSHOT.jar clegoues.genprog4java.main.Main $D4J_HOME/$BUGSFOLDER/"$LOWERCASEPACKAGE""$BUGNUMBER"Buggy/defects4j.config | tee $D4J_HOME/$BUGSFOLDER/"$LOWERCASEPACKAGE""$BUGNUMBER"Buggy/log"$PROJECT""$BUGNUMBER"Seed$seed.txt
-
+	timeout -sHUP 50h $JAVALOCATION -ea -Dlog4j.configurationFile=file:"$GP4J_HOME"/src/log4j.properties -Dfile.encoding=UTF-8 -classpath "$GP4J_HOME"/target/uber-GenProg4Java-0.0.1-SNAPSHOT.jar clegoues.genprog4java.main.Main $D4J_HOME/$BUGSFOLDER/"$LOWERCASEPACKAGE""$BUGNUMBER"Buggy/defects4j.config | tee $D4J_HOME/$BUGSFOLDER/"$LOWERCASEPACKAGE""$BUGNUMBER"Buggy/log"$PROJECT""$BUGNUMBER"Seed$seed.txt
 
 	#Save the variants in a tar file
 	tar -cvf $D4J_HOME/$BUGSFOLDER/"$LOWERCASEPACKAGE""$BUGNUMBER"Buggy/variants"$PROJECT""$BUGNUMBER"Seed$seed.tar $D4J_HOME/$BUGSFOLDER/"$LOWERCASEPACKAGE""$BUGNUMBER"Buggy/tmp/
